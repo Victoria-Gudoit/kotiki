@@ -1,0 +1,37 @@
+.container * {
+	font-family: sans-serif;
+}
+
+.container {
+    margin: 10px auto;
+	display: flex;
+    justify-content: space-around;
+	max-width: 750px;
+}
+
+.container-column {
+	width: 30%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.column-todo .container-column-title {
+    background-color: rgb(213, 255, 241);
+}
+
+.column-progress .container-column-title {
+    background-color: rgb(209, 255, 197);
+}
+
+.column-done .container-column-title {
+    background-color: rgb(246, 252, 192);
+}
+
+.container-column-title {
+	font-size: 20px;
+    font-weight: 700;
+	color: rgba(100, 81, 81, 0.568);
+    width: 100%;
+    text-align: center;
+}

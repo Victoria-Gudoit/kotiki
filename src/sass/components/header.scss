@@ -1,0 +1,24 @@
+.header {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 750px;
+    border-radius: 5px;
+    background: #009577b6;
+}
+
+.header-logo {
+    margin-left: 15px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.header-time {
+    margin-right: 15px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 25px;
+}
