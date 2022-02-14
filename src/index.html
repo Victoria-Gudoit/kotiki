@@ -5,10 +5,99 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="sass/index.scss">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="scripts/index.js" defer type="module"></script>
     <title>Trello</title>
 </head>
 <body>
+    <header class="header">
+        <p class="header-logo">Trello</p>
+        <div class="header-time">12:32</div>
+    </header>
+    <div class="main">
+        <div class="container">
+            <div class="container-column column-todo">
+                <div class="column-title">TODO:</div>
+                <div class="column-card">
+                    <div class="card-row">
+                        <div class="card-title">Title</div>
+                        <div class="card-title-buttons">
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Delete</button>
+                        </div>
+                    </div>
+                    <div class="card-row"> 
+                        <div class="card-description">Description</div>
+                        <button class="btn-arrow">></button>
+                    </div>
+                    <div class="card-row">    
+                        <div class="card-user">User</div>
+                        <div class="card-time">Time</div>
+                    </div>
+                </div>
 
+                <div class="column-card">
+                    <div class="card-row">
+                        <div class="card-title">Title</div>
+                        <div class="card-title-buttons">
+                            <button class="btn-edit">Edit</button>
+                            <button class="btn-delete">Delete</button>
+                        </div>
+                    </div>
+                    <div class="card-row"> 
+                        <div class="card-description">Description</div>
+                        <button class="btn-arrow">></button>
+                    </div>
+                    <div class="card-row">    
+                        <div class="card-user">User</div>
+                        <div class="card-time">Time</div>
+                    </div>
+                </div>
+                <button class="btn-add">Add todo</button>
+            </div>
+            
+            <div class="container-column column-progress">
+                <div class="column-title">IN PROGRESS</div>
+                <div class="column-card">	
+                    <div class="card-row">
+                        <div class="card-title">Title</div>
+                        <div class="card-title-buttons">
+                            <button class="btn-back">Back</button>
+                            <button class="btn-complete">Complete</button>
+                        </div>
+                    </div>
+                    <div class="card-row"> 
+                        <div class="card-description">Description</div>
+                    </div>
+                    <div class="card-row">    
+                        <div class="card-user">User</div>
+                        <div class="card-time">Time</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container-column column-done">
+                <div class="column-title">DONE</div>
+                <div class="column-card">	
+                    <div class="card-row">
+                        <div class="card-title">Title</div>
+                        <div class="card-title-buttons">
+                            <button class="btn-delete">Delete</button>
+                        </div>
+                    </div>
+                    <div class="card-row"> 
+                        <div class="card-description">Description</div>
+                    </div>
+                    <div class="card-row">    
+                        <div class="card-user">User</div>
+                        <div class="card-time">Time</div>
+                    </div>
+                </div>
+                <button class="btn-deleteAll">Delete all</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
