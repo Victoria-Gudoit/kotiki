@@ -1,5 +1,5 @@
 .container {
-    margin: 10px auto;
+    margin: 0 auto;
 	display: flex;
     justify-content: space-around;
 	max-width: 750px;
@@ -13,7 +13,7 @@
 }
 
 .column-todo {
-    .container-column-title {
+    .column-title {
         background-color: rgb(213, 255, 241);
     }
 
@@ -23,7 +23,7 @@
 }
 
 .column-progress {
-    .container-column-title {
+    .column-title {
         background-color: rgb(209, 255, 197);
     }
 
@@ -33,7 +33,7 @@
 }
 
 .column-done {
-    .container-column-title {
+    .column-title {
         background-color: rgb(246, 252, 192);
     }
 
@@ -42,7 +42,7 @@
     }
 }
 
-.container-column-title {
+.column-title {
 	font-size: 20px;
     font-weight: 700;
 	color: rgba(100, 81, 81, 0.568);
