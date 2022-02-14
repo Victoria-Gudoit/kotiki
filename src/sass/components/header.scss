@@ -6,19 +6,19 @@
     max-width: 750px;
     border-radius: 5px;
     background: #009577b6;
-}
+    
+    &-logo {
+        margin-left: 15px;
+        font-size: 30px;
+        font-weight: 700;
+        color: #fff;
+    }
 
-.header-logo {
-    margin-left: 15px;
-    font-size: 30px;
-    font-weight: 700;
-    color: #fff;
-}
-
-.header-time {
-    margin-right: 15px;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 25px;
+    &-time {
+        margin-right: 15px;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 25px;
+    }
 }
