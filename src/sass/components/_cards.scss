@@ -1,0 +1,22 @@
+.card {
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	margin-top: 10px;
+	border: solid 0.5px;
+	border-radius: 5px;
+}
+
+.card-row {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 10px;
+
+	& __title,
+	__description,
+	__user {
+		padding: 2px 5px;
+		box-sizing: border-box;
+		cursor: pointer;
+	}
+}

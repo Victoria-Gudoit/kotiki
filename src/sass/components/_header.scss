@@ -1,0 +1,22 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 750px;
+	margin: 10px auto;
+	background: #009577b6;
+	border-radius: 5px;
+
+	&__logo {
+		margin-left: 15px;
+		font-size: 30px;
+		font-weight: 700;
+		color: #fff;
+	}
+
+	&__time {
+		margin-right: 15px;
+		font-size: 25px;
+		color: #fff;
+	}
+}

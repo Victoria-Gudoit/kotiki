@@ -1,0 +1,26 @@
+.card-row__buttons {
+	font-weight: 700;
+	color: #64515191;
+	background: #fff;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.btn-add,
+.btn-delete-all {
+	margin-top: 10px;
+	font-size: 20px;
+	font-weight: 700;
+	color: rgba(100, 81, 81, 0.568);
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.btn-add {
+	background: rgb(213, 255, 241);
+}
+
+.btn-delete-all {
+	background-color: rgb(246, 252, 192);
+}
