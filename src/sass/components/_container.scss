@@ -1,0 +1,52 @@
+.container {
+	display: flex;
+	justify-content: space-around;
+
+	max-width: 750px;
+	margin: 0 auto;
+}
+
+.column {
+	display: flex;
+	flex-direction: column;
+
+	width: 30%;
+}
+
+.column-todo {
+	.column__title {
+		background-color: rgb(213, 255, 241);
+	}
+
+	.column__card {
+		background-color: rgb(213, 255, 241);
+	}
+}
+
+.column-progress {
+	.column__title {
+		background-color: rgb(209, 255, 197);
+	}
+
+	.column__card {
+		background-color: rgb(209, 255, 197);
+	}
+}
+
+.column-done {
+	.column__title {
+		background-color: rgb(246, 252, 192);
+	}
+
+	.column__card {
+		background-color: rgb(246, 252, 192);
+	}
+}
+
+.column__title {
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	color: rgba(100, 81, 81, 0.568);
+	text-transform: uppercase;
+}
