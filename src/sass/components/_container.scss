@@ -13,37 +13,37 @@
 
 .column-todo {
 	.column__title {
-		background-color: rgb(213, 255, 241);
+		background-color: #c6def1;
 	}
 
 	.column__card {
-		background-color: rgb(213, 255, 241);
+		background-color: #c6def1;
 	}
 }
 
 .column-progress {
 	.column__title {
-		background-color: rgb(209, 255, 197);
+		background-color: #f2c6de;
 	}
 
 	.column__card {
-		background-color: rgb(209, 255, 197);
+		background-color: #f2c6de;
 	}
 }
 
 .column-done {
 	.column__title {
-		background-color: rgb(246, 252, 192);
+		background-color: #f7d9c4;
 	}
 
 	.column__card {
-		background-color: rgb(246, 252, 192);
+		background-color: #f7d9c4;
 	}
 }
 
 .column__title {
 	font-size: 20px;
-	font-weight: 700;
+	font-weight: 500;
 	text-align: center;
 	color: rgba(100, 81, 81, 0.568);
 	text-transform: uppercase;
