@@ -1,8 +1,14 @@
-.card-row__buttons {
-	font-weight: 700;
+.btn-edit,
+.btn-delete,
+.btn-arrow,
+.btn-back,
+.btn-complete {
+	font-weight: 400;
+	font-size: 13px;
 	color: #64515191;
-	background: #fff;
-	border-radius: 5px;
+	background: white;
+	border: solid 0.1px;
+	border-radius: 8px;
 	cursor: pointer;
 }
 
@@ -10,17 +16,17 @@
 .btn-delete-all {
 	margin-top: 10px;
 	font-size: 20px;
-	font-weight: 700;
+	font-weight: 500;
 	color: rgba(100, 81, 81, 0.568);
 	border: none;
-	border-radius: 5px;
+	border-radius: 15px;
 	cursor: pointer;
 }
 
 .btn-add {
-	background: rgb(213, 255, 241);
+	background: #c6def1;
 }
 
 .btn-delete-all {
-	background-color: rgb(246, 252, 192);
+	background-color: #f7d9c4;
 }
