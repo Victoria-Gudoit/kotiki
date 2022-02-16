@@ -1,0 +1,16 @@
+#modal-delete-all {
+	position: absolute;
+	display: none;
+	max-width: 225px;
+}
+
+.card-modal {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	background-color: rgb(213, 255, 241);
+
+	.card-row__buttons {
+		background-color: rgb(213, 255, 241);
+	}
+}
