@@ -3,6 +3,14 @@
 	justify-content: space-around;
 	max-width: 750px;
 	margin: 0 auto;
+
+	@include _760 {
+		margin: 10px;
+	}
+
+	@include _700 {
+		flex-wrap: wrap;
+	}
 }
 
 .column {
@@ -19,6 +27,11 @@
 	.column__card {
 		background-color: #c6def1;
 	}
+
+	@include _700 {
+		flex: 0 1 80%;
+        margin-bottom: 10px;
+	}
 }
 
 .column-progress {
@@ -29,6 +42,11 @@
 	.column__card {
 		background-color: #f2c6de;
 	}
+
+	@include _700 {
+		flex: 0 1 80%;
+        margin-bottom: 10px;
+	}
 }
 
 .column-done {
@@ -38,6 +56,10 @@
 
 	.column__card {
 		background-color: #f7d9c4;
+	}
+
+	@include _700 {
+		flex: 0 1 80%;
 	}
 }
 

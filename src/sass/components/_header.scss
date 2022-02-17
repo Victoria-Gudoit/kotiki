@@ -7,6 +7,15 @@
 	background: #dbcdf0;
 	border-radius: 10px;
 
+	@include _760 {
+		margin: 10px;
+        max-width: 100%;
+	}
+
+	@include _700 {
+		max-width: 100%;
+	}
+
 	&__logo {
 		margin-left: 15px;
 		font-size: 30px;
