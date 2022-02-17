@@ -1,5 +1,6 @@
 import {
-    btnDeleteAll,
-    btnCancelModal,
-    modalDeleteAll
-} from './btnDeleteAll.js'
+  btnDeleteAll,
+  btnCancelModal,
+  modalDeleteAll,
+  btnAdd,
+} from "./btnDeleteAll.js";
