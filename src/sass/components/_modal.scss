@@ -1,16 +1,88 @@
 #modal-delete-all {
-	position: absolute;
-	display: none;
-	max-width: 225px;
+  position: absolute;
+  display: none;
+  max-width: 225px;
 }
 
 .card-modal {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	background-color: rgb(213, 255, 241);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: rgb(213, 255, 241);
 
-	.card-row__buttons {
-		background-color: rgb(213, 255, 241);
-	}
+  .card-row__buttons {
+    background-color: rgb(213, 255, 241);
+  }
+}
+
+.modal-window {
+  position: absolute;
+  top: -1000px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 15px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.8s;
+  background: rgba(0, 0, 0, 0.8);
+
+  &__title {
+    width: 100px;
+    margin-bottom: 10px;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__description {
+    width: 400px;
+    height: 150px;
+    margin-bottom: 20px;
+    resize: none;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__select {
+    outline: none;
+  }
+
+  &__select,
+  &__button-cancel,
+  &__button-confirm {
+    font-weight: 400;
+    font-size: 13px;
+    color: #64515191;
+    background: white;
+    border: solid 0.1px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .modal-window__content {
+    width: 100%;
+    max-width: 500px;
+    padding: 50px;
+    background-color: #c6def1;
+    border-radius: 3px;
+    box-shadow: 0 5px 15px black;
+  }
+}
+
+.modal__active {
+  position: fixed;
+  top: 0;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.8s;
+}
+
+.modal__hidden {
+  overflow: hidden;
 }
