@@ -21,11 +21,11 @@
 
 .column-todo {
 	.column__title {
-		background-color: #c6def1;
+		background-color: $lightBlue;
 	}
 
 	.column__card {
-		background-color: #c6def1;
+		background-color: $lightBlue;
 	}
 
 	@include _700 {
@@ -36,11 +36,11 @@
 
 .column-progress {
 	.column__title {
-		background-color: #f2c6de;
+		background-color: $lightPurplishPink;
 	}
 
 	.column__card {
-		background-color: #f2c6de;
+		background-color: $lightPurplishPink;
 	}
 
 	@include _700 {
@@ -51,11 +51,11 @@
 
 .column-done {
 	.column__title {
-		background-color: #f7d9c4;
+		background-color: $lightOrange;
 	}
 
 	.column__card {
-		background-color: #f7d9c4;
+		background-color: $lightOrange;
 	}
 
 	@include _700 {
@@ -67,6 +67,6 @@
 	font-size: 20px;
 	font-weight: 500;
 	text-align: center;
-	color: rgba(100, 81, 81, 0.568);
+	color: $grey;
 	text-transform: uppercase;
 }

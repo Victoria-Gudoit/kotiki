@@ -4,7 +4,7 @@
 	align-items: center;
 	max-width: 750px;
 	margin: 10px auto;
-	background: #dbcdf0;
+	background: $lightPurple;
 	border-radius: 10px;
 
 	@include _760 {
@@ -13,19 +13,19 @@
 	}
 
 	@include _700 {
-		max-width: 100%;
+		flex: 0 1 100%;
 	}
 
 	&__logo {
 		margin-left: 15px;
 		font-size: 30px;
 		font-weight: 400;
-		color: #fff;
+		color: $white;
 	}
 
 	&__time {
 		margin-right: 15px;
 		font-size: 25px;
-		color: #fff;
+		color: $white;
 	}
 }

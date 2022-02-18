@@ -8,10 +8,10 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: rgb(213, 255, 241);
+  background-color: $lightOrange;
 
   .card-row__buttons {
-    background-color: rgb(213, 255, 241);
+    background-color: $lightOrange;
   }
 }
 
@@ -40,7 +40,7 @@
   }
 
   &__description {
-    width: 400px;
+    width: 100%;
     height: 150px;
     margin-bottom: 20px;
     resize: none;
@@ -58,8 +58,8 @@
   &__button-confirm {
     font-weight: 400;
     font-size: 13px;
-    color: #64515191;
-    background: white;
+    color: $lightGrey;
+    background: $white;
     border: solid 0.1px;
     border-radius: 8px;
     cursor: pointer;
@@ -69,8 +69,8 @@
     width: 100%;
     max-width: 500px;
     padding: 50px;
-    background-color: #c6def1;
-    border-radius: 3px;
+    background-color: $lightBlue;
+    border-radius: 15px;
     box-shadow: 0 5px 15px black;
   }
 }
