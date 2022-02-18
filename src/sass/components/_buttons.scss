@@ -5,8 +5,8 @@
 .btn-complete {
 	font-weight: 400;
 	font-size: 13px;
-	color: #64515191;
-	background: white;
+	color: $lightGrey;
+	background: $white;
 	border: solid 0.1px;
 	border-radius: 8px;
 	cursor: pointer;
@@ -24,9 +24,9 @@
 }
 
 .btn-add {
-	background: #c6def1;
+	background: $lightBlue;
 }
 
 .btn-delete-all {
-	background-color: #f7d9c4;
+	background-color: $lightOrange;
 }
