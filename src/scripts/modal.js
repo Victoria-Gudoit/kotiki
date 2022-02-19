@@ -26,6 +26,7 @@ const btnAdd = new ModaltoDo(document.querySelector(".modal-window"));
 function ModaltoDo(root) {
   this.root = root;
   const tagBody = document.querySelector("body");
+
   document.querySelector(".btn-add").addEventListener("click", () => {
     this.open();
   });
