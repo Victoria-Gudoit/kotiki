@@ -3,9 +3,10 @@
 .btn-arrow,
 .btn-back,
 .btn-complete {
+	font-family: $font-palanquin-dark;
 	font-weight: 400;
 	font-size: 13px;
-	color: $lightGrey;
+	color: $light-grey;
 	background: $white;
 	border: solid 0.1px;
 	border-radius: 8px;
@@ -15,18 +16,19 @@
 .btn-add,
 .btn-delete-all {
 	margin-top: 10px;
+	font-family: $font-palanquin-dark;
 	font-size: 20px;
 	font-weight: 500;
-	color: rgba(100, 81, 81, 0.568);
+	color: $light-grey;
 	border: none;
 	border-radius: 15px;
 	cursor: pointer;
 }
 
 .btn-add {
-	background: $lightBlue;
+	background: $light-blue;
 }
 
 .btn-delete-all {
-	background-color: $lightOrange;
+	background-color: $light-orange;
 }
