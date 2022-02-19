@@ -3,6 +3,6 @@ import {
   btnCancelModal,
   modalDeleteAll,
   btnAdd,
-} from "./btnDeleteAll.js";
+} from "./modal.js";
 
-import {currentTime} from './utils.js'
+import { currentTime } from "./utils.js";
