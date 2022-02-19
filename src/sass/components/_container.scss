@@ -3,6 +3,7 @@
 	justify-content: space-around;
 	max-width: 750px;
 	margin: 0 auto;
+	font-family: $font-palanquin-dark;
 
 	@include _760 {
 		margin: 10px;
@@ -21,11 +22,11 @@
 
 .column-todo {
 	.column__title {
-		background-color: $lightBlue;
+		background-color: $light-blue;
 	}
 
 	.column__card {
-		background-color: $lightBlue;
+		background-color: $light-blue;
 	}
 
 	@include _700 {
@@ -36,11 +37,11 @@
 
 .column-progress {
 	.column__title {
-		background-color: $lightPurplishPink;
+		background-color: $light-purplish-pink;
 	}
 
 	.column__card {
-		background-color: $lightPurplishPink;
+		background-color: $light-purplish-pink;
 	}
 
 	@include _700 {
@@ -51,11 +52,11 @@
 
 .column-done {
 	.column__title {
-		background-color: $lightOrange;
+		background-color: $light-orange;
 	}
 
 	.column__card {
-		background-color: $lightOrange;
+		background-color: $light-orange;
 	}
 
 	@include _700 {
@@ -67,6 +68,6 @@
 	font-size: 20px;
 	font-weight: 500;
 	text-align: center;
-	color: $grey;
+	color: $light-grey;
 	text-transform: uppercase;
 }

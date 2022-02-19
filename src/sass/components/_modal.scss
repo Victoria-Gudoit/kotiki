@@ -8,10 +8,11 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  background-color: $lightOrange;
+  font-family: $font-palanquin-dark;
+  background-color: $light-orange;
 
   .card-row__buttons {
-    background-color: $lightOrange;
+    background-color: $light-orange;
   }
 }
 
@@ -26,6 +27,7 @@
   justify-content: center;
   align-items: flex-start;
   padding: 30px 15px;
+  font-family: $font-palanquin-dark;
   visibility: hidden;
   opacity: 0;
   transition: all 0.8s ease 0s;
@@ -58,7 +60,7 @@
   &__button-confirm {
     font-weight: 400;
     font-size: 13px;
-    color: $lightGrey;
+    color: $light-grey;
     background: $white;
     border: solid 0.1px;
     border-radius: 8px;
@@ -69,7 +71,7 @@
     width: 100%;
     max-width: 500px;
     padding: 50px;
-    background-color: $lightBlue;
+    background-color: $light-blue;
     border-radius: 15px;
     box-shadow: 0 5px 15px black;
     transform: translate(0px, 0%);
