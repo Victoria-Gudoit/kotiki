@@ -5,11 +5,11 @@
 	margin: 0 auto;
 	font-family: $font-palanquin-dark;
 
-	@include _760 {
+	@include md {
 		margin: 10px;
 	}
 
-	@include _700 {
+	@include sm {
 		flex-wrap: wrap;
 	}
 }
@@ -29,7 +29,7 @@
 		background-color: $light-blue;
 	}
 
-	@include _700 {
+	@include sm {
 		flex: 0 1 80%;
         margin-bottom: 10px;
 	}
@@ -44,7 +44,7 @@
 		background-color: $light-purplish-pink;
 	}
 
-	@include _700 {
+	@include sm {
 		flex: 0 1 80%;
         margin-bottom: 10px;
 	}
@@ -59,7 +59,7 @@
 		background-color: $light-orange;
 	}
 
-	@include _700 {
+	@include sm {
 		flex: 0 1 80%;
 	}
 }

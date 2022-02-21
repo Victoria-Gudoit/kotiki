@@ -1,11 +1,13 @@
-@mixin _760 {
-    @media (max-width: 760px) {
+// Small devices
+@mixin sm {
+    @media (max-width: #{$screen-sm-max}) {
         @content;   
     };
 };
 
-@mixin  _700 {
-    @media (max-width: 700px) {
+// Medium devices
+@mixin  md {
+    @media (max-width: #{$screen-md-max}) {
         @content;
     };
 };
