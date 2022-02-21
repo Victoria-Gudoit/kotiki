@@ -1,4 +1,4 @@
-#modal-delete-all {
+.modal {
   position: absolute;
   display: none;
   max-width: 225px;
@@ -7,13 +7,9 @@
 .card-modal {
   display: flex;
   flex-direction: column;
-  text-align: center;
   font-family: $font-palanquin-dark;
+  text-align: center;
   background-color: $light-orange;
-
-  .card-row__buttons {
-    background-color: $light-orange;
-  }
 }
 
 .modal-window {
