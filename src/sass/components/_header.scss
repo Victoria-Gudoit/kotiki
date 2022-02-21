@@ -7,12 +7,12 @@
 	background: $light-purple;
 	border-radius: 10px;
 
-	@include _760 {
+	@include md {
 		margin: 10px;
         max-width: 100%;
 	}
 
-	@include _700 {
+	@include sm {
 		flex: 0 1 100%;
 	}
 
