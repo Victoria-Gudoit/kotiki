@@ -1,8 +1,8 @@
-.btn-edit,
-.btn-delete,
-.btn-arrow,
-.btn-back,
-.btn-complete {
+.card__row-btn-edit,
+.card__row-btn-delete,
+.card__row-btn-arrow,
+.card__row-btn-back,
+.card__row-btn-complete {
 	font-family: $font-palanquin-dark;
 	font-weight: 400;
 	font-size: 13px;
@@ -13,8 +13,8 @@
 	cursor: pointer;
 }
 
-.btn-add,
-.btn-delete-all {
+.column__btn-add,
+.column__btn-delete-all {
 	margin-top: 10px;
 	font-family: $font-palanquin-dark;
 	font-size: 20px;
@@ -25,10 +25,10 @@
 	cursor: pointer;
 }
 
-.btn-add {
+.column__btn-add {
 	background: $light-blue;
 }
 
-.btn-delete-all {
+.column__btn-delete-all {
 	background-color: $light-orange;
 }
