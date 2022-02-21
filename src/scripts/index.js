@@ -5,4 +5,4 @@ import {
   btnAdd,
 } from "./modal.js";
 
-import { currentTime } from "./utils.js";
+import { currentTime } from "./components/Clock.js";
