@@ -6,17 +6,19 @@
 	border-radius: 15px;
 }
 
-.card-row {
+.card__row {
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
 	margin-bottom: 10px;
 
-	&__title,
-	&__description,
-	&__user {
+	&-title,
+	&-description,
+	&-user {
 		padding: 2px 5px;
 		box-sizing: border-box;
+		font-size: 16px;
+		font-weight: normal;
 		cursor: pointer;
 	}
 }
