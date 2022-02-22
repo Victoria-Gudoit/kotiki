@@ -1,21 +1,21 @@
-const btnDeleteAll = document.querySelector(".btn-delete-all");
-const btnCancelModal = document.querySelector("#cancel-modal");
-const modalDeleteAll = new Modal(document.querySelector("#modal-delete-all"));
-btnDeleteAll.addEventListener("click", (event) => {
-  modalDeleteAll.open(event.clientY);
-});
-
-btnCancelModal.addEventListener("click", () => {
-  modalDeleteAll.close();
-});
+const modalWarning = new Modal(document.querySelector(".modal-warning"));
 
 function Modal(root) {
   this.root = root;
+
+  document.querySelector(".column__btn-delete-all").addEventListener("click", (event) => {
+    modalWarning.open(event.clientY);
+  });
+
+  document.querySelector("#cancel-modal").addEventListener("click", () => {
+    modalWarning.close();
+  });
 
   this.open = function (y) {
     this.root.style.display = "block";
     this.root.style.top = `${y + 20}px`;
   };
+
   this.close = function () {
     this.root.style.display = "none";
   };
@@ -51,4 +51,4 @@ function ModaltoDo(root) {
   });
 }
 
-export { btnDeleteAll, btnCancelModal, modalDeleteAll, btnAdd };
+export { modalWarning, btnAdd };

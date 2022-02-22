@@ -1,7 +1,7 @@
 import {
   btnDeleteAll,
   btnCancelModal,
-  modalDeleteAll,
+  modalWarning,
   btnAdd,
 } from "./modal.js";
 
