@@ -1,13 +1,13 @@
 // Small devices
 @mixin sm {
-    @media (max-width: #{$screen-sm-max}) {
+    @media (min-width: #{$screen-sm-min}) {
         @content;   
     };
 };
 
 // Medium devices
 @mixin  md {
-    @media (max-width: #{$screen-md-max}) {
+    @media (min-width: #{$screen-md-min}) {
         @content;
     };
 };
