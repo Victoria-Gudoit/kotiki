@@ -1,3 +1,17 @@
+import {
+  getValueOption,
+  Task,
+  createTask,
+  render,
+} from "./components/Cards.js";
+import {
+  TODO_TASK_KEY,
+  setTodosData,
+  getTodosData,
+} from "./localStorageAPI.js";
+
+render();
+let tasks = [];
 const btnDeleteAll = document.querySelector(".btn-delete-all");
 const btnCancelModal = document.querySelector("#cancel-modal");
 const modalDeleteAll = new Modal(document.querySelector("#modal-delete-all"));
@@ -27,7 +41,7 @@ function ModaltoDo(root) {
   this.root = root;
   const tagBody = document.querySelector("body");
 
-  document.querySelector(".btn-add").addEventListener("click", () => {
+  document.querySelector(".column__btn-add").addEventListener("click", () => {
     this.open();
   });
 
@@ -35,6 +49,11 @@ function ModaltoDo(root) {
     .querySelector(".modal-window__button-cancel")
     .addEventListener("click", () => {
       this.close();
+    });
+  document
+    .querySelector(".modal-window__button-confirm")
+    .addEventListener("click", () => {
+      this.addTask();
     });
 
   this.open = function () {
@@ -44,6 +63,22 @@ function ModaltoDo(root) {
   this.close = function () {
     this.root.classList.remove("modal__active");
   };
+  this.addTask = function () {
+    tasks = getTodosData(TODO_TASK_KEY);
+    const titleTask = document.querySelector("#modal-title");
+    const descriptionTask = document.querySelector("#modal-text");
+    tasks.push(new Task(titleTask.value, descriptionTask.value));
+    if (titleTask.value && descriptionTask.value !== "") {
+      setTodosData(TODO_TASK_KEY, tasks);
+      render();
+      titleTask.value = "";
+      descriptionTask.value = "";
+      btnAdd.close();
+    } else {
+      alert("Вы ничего не ввели! :( ");
+    }
+  };
+
   document.addEventListener("click", (event) => {
     if (event.target === this.root) {
       this.root.classList.remove("modal__active");
@@ -51,4 +86,5 @@ function ModaltoDo(root) {
   });
 }
 
-export { btnDeleteAll, btnCancelModal, modalDeleteAll, btnAdd };
+/*export { btnDeleteAll, btnCancelModal, modalDeleteAll, btnAdd };*/
+export { btnAdd };
