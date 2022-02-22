@@ -1,23 +1,17 @@
 .container {
 	display: flex;
 	justify-content: space-around;
-	max-width: 750px;
+	flex-wrap: wrap;
+	max-width: 800px;
 	margin: 0 auto;
 	font-family: $font-palanquin-dark;
-
-	@include md {
-		margin: 10px;
-	}
-
-	@include sm {
-		flex-wrap: wrap;
-	}
 }
 
 .column {
 	display: flex;
 	flex-direction: column;
-	width: 30%;
+	width: 80%;
+	margin-bottom: 10px;
 	&__title {
 		font-size: 20px;
 		font-weight: 500;
@@ -36,10 +30,9 @@
 		background-color: $light-blue;
 	}
 
-	@include sm {
-		flex: 0 1 80%;
-        margin-bottom: 10px;
-	}
+	@include md {
+		flex: 0 3 30%;
+    }
 }
 
 .column-progress {
@@ -51,10 +44,9 @@
 		background-color: $light-purplish-pink;
 	}
 
-	@include sm {
-		flex: 0 1 80%;
-        margin-bottom: 10px;
-	}
+	@include md {
+		flex: 0 3 30%;
+    }
 }
 
 .column-done {
@@ -66,8 +58,8 @@
 		background-color: $light-orange;
 	}
 
-	@include sm {
-		flex: 0 1 80%;
+	@include md {
+		flex: 0 3 30%;
 	}
 }
 

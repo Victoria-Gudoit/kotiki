@@ -2,15 +2,10 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	max-width: 750px;
+	max-width: 800px;
 	margin: 10px auto;
 	background: $light-purple;
 	border-radius: 10px;
-
-	@include md {
-		margin: 10px;
-        max-width: 100%;
-	}
 
 	@include sm {
 		flex: 0 1 100%;
