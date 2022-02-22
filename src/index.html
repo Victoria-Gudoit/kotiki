@@ -20,7 +20,8 @@
         <div class="container">
             <div class="column column-todo" id="column-todo">
                 <h2 class="column__title">todo:</h2>
-                <div class="card">
+                <div class="column__cards" id="column-cards"></div>
+                <!--<div class="card">
                     <div class="card__row">
                         <h3 class="card__row-title">Title</h3>
                         <div class="card__row">
@@ -36,7 +37,7 @@
                         <p class="card__row-user">User</p>
                         <p class="card__row-time">Time</p>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="card">
                     <div class="card__row">
@@ -110,8 +111,8 @@
     </div>
     <div class="modal-window ">
         <div class="modal-window__content ">
-            <input class="modal-window__title" type="text" id="title" placeholder="Title">
-            <textarea class="modal-window__description" id="text" name="text" placeholder='Write your task...'></textarea>
+            <input class="modal-window__title" type="text" id="modal-title" placeholder="Title">
+            <textarea class="modal-window__description" id="modal-text" name="text" placeholder='Write your task...'></textarea>
             <div class="modal-window__buttons">
                 <select class="modal-window__select" id="user">
                     <option value="user1">user1</option>
