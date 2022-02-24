@@ -5,8 +5,8 @@ function setTodosData(key, data) {
 }
 
 function getTodosData(key) {
-  const data = JSON.parse(localStorage.getItem(key));
-  return data ? data : [];
+  let data = JSON.parse(localStorage.getItem(key));
+  return (data ??= []);
 }
 
 export { TODO_TASK_KEY, setTodosData, getTodosData };

@@ -1,9 +1,4 @@
-import {
-  getValueOption,
-  Task,
-  createTask,
-  render,
-} from "../components/Cards.js";
+import { Card, render } from "./Card.js";
 import {
   TODO_TASK_KEY,
   setTodosData,
@@ -11,7 +6,7 @@ import {
 } from "../localStorageAPI.js";
 
 render();
-let tasks = [];
+
 const btnAdd = new ModalToDo(document.querySelector(".modal-window"));
 
 function ModalToDo(root) {
@@ -19,7 +14,7 @@ function ModalToDo(root) {
   this.btnCancel = this.root.querySelector(".modal-window__button-cancel");
   this.btnAdd = document.querySelector(".column__btn-add");
   this.btnConfirm = this.root.querySelector(".modal-window__button-confirm");
-  this.document = document;
+  this.overlayModal = document;
   this.init = function () {
     this.btnCancel.addEventListener("click", () => {
       this.close();
@@ -30,7 +25,7 @@ function ModalToDo(root) {
     this.btnConfirm.addEventListener("click", () => {
       this.addTask();
     });
-    this.document.addEventListener("click", (event) => {
+    this.overlayModal.addEventListener("click", (event) => {
       if (event.target === this.root) {
         this.root.classList.remove("modal__active");
       }
@@ -44,10 +39,10 @@ function ModalToDo(root) {
     this.root.classList.remove("modal__active");
   };
   this.addTask = function () {
-    tasks = getTodosData(TODO_TASK_KEY);
+    const tasks = getTodosData(TODO_TASK_KEY);
     const titleTask = document.querySelector("#modal-title");
     const descriptionTask = document.querySelector("#modal-text");
-    tasks.push(new Task(titleTask.value, descriptionTask.value));
+    tasks.push(new Card(titleTask.value, descriptionTask.value));
     if (titleTask.value && descriptionTask.value !== "") {
       setTodosData(TODO_TASK_KEY, tasks);
       render();
