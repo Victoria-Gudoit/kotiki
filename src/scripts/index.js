@@ -1,8 +1,3 @@
-import {
-  btnDeleteAll,
-  btnCancelModal,
-  modalDeleteAll,
-  btnAdd,
-} from "./modal.js";
-
+import { btnDeleteAll, btnCancelModal, modalDeleteAll } from "./modal.js";
 import { currentTime } from "./components/Clock.js";
+import { btnAdd } from "./components/ModalToDo.js";
