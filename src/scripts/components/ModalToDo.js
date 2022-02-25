@@ -1,11 +1,9 @@
-import { Card, render } from "./Card.js";
+import { Card } from "./Card.js";
 import {
   TODO_TASK_KEY,
   setTodosData,
   getTodosData,
 } from "../localStorageAPI.js";
-
-render();
 
 const btnAdd = new ModalToDo(document.querySelector(".modal-window"));
 
@@ -42,10 +40,12 @@ function ModalToDo(root) {
     const tasks = getTodosData(TODO_TASK_KEY);
     const titleTask = document.querySelector("#modal-title");
     const descriptionTask = document.querySelector("#modal-text");
-    tasks.push(new Card(titleTask.value, descriptionTask.value));
+    const card = new Card(titleTask.value, descriptionTask.value);
+
+    tasks.push(card);
     if (titleTask.value && descriptionTask.value !== "") {
       setTodosData(TODO_TASK_KEY, tasks);
-      render();
+      card.render();
       titleTask.value = "";
       descriptionTask.value = "";
       btnAdd.close();
