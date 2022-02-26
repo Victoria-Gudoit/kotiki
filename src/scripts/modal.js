@@ -12,12 +12,12 @@ function Modal(root) {
   });
 
   this.open = function (y) {
-    this.root.style.display = "block";
+    this.root.classList.add("modal__active");
     this.root.style.top = `${y + 20}px`;
   };
 
   this.close = function () {
-    this.root.style.display = "none";
+    this.root.classList.remove("modal__active");
   };
 }
 

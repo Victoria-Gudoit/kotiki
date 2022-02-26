@@ -1,7 +1,11 @@
 .modal-warning {
 	position: absolute;
-	display: none;
+	visibility: hidden;
 	max-width: 225px;
+}
+
+.open {
+	display: block;
 }
 
 .card-modal {
