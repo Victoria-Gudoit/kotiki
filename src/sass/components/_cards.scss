@@ -31,3 +31,17 @@
     cursor: pointer;
   }
 }
+
+.card__input-visible {
+  width: 120px;
+  outline: none;
+}
+
+.card__content-visible {
+  position: relative;
+  visibility: visible;
+}
+.card__content-hidden {
+  position: absolute;
+  visibility: hidden;
+}
