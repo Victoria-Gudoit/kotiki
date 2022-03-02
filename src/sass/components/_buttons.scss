@@ -1,30 +1,42 @@
-.card__row-btn {
-	font-family: $font-palanquin-dark;
-	font-weight: 400;
-	font-size: 13px;
-	color: $light-grey;
-	background: $white;
-	border: solid 0.1px;
-	border-radius: 8px;
-	cursor: pointer;
+.card__content-btn {
+  font-family: $font-palanquin-dark;
+  font-weight: 400;
+  font-size: 13px;
+  color: $light-grey;
+  background: $white;
+  border: solid 0.1px;
+  border-radius: 8px;
+  cursor: pointer;
+  &--arrow {
+    position: relative;
+    width: 20px;
+    height: 25px;
+  }
+  &--arrow::before {
+    content: ">";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 .column__btn-add,
 .column__btn-delete-all {
-	margin-top: 10px;
-	font-family: $font-palanquin-dark;
-	font-size: 20px;
-	font-weight: 500;
-	color: $light-grey;
-	border: none;
-	border-radius: 15px;
-	cursor: pointer;
+  margin-top: 10px;
+  font-family: $font-palanquin-dark;
+  font-size: 20px;
+  font-weight: 500;
+  color: $light-grey;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
 .column__btn-add {
-	background: $light-blue;
+  background: $light-blue;
 }
 
 .column__btn-delete-all {
-	background-color: $light-orange;
+  background-color: $light-orange;
 }
