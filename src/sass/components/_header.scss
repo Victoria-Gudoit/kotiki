@@ -1,28 +1,28 @@
 .header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	max-width: 800px;
-	margin: 10px auto;
-	background: $light-purple;
-	border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  margin: 10px auto;
+  background: $light-purple;
+  border-radius: 10px;
 
-	@include sm {
-		flex: 0 1 100%;
-	}
+  @include sm {
+    flex: 0 1 100%;
+  }
 
-	&__logo {
-		margin-left: 15px;
-		font-family: $font-palanquin-dark;
-		font-size: 30px;
-		font-weight: 400;
-		color: $white;
-	}
+  &__logo {
+    margin-left: 15px;
+    font-family: $font-palanquin-dark;
+    font-size: 30px;
+    font-weight: 400;
+    color: $white;
+  }
 
-	&__time {
-		margin-right: 15px;
-		font-family: $font-palanquin-dark;
-		font-size: 25px;
-		color: $white;
-	}
+  &__time {
+    margin-right: 15px;
+    font-family: $font-palanquin-dark;
+    font-size: 25px;
+    color: $white;
+  }
 }

@@ -19,55 +19,55 @@
     <div class="main">
         <div class="container">
             <div class="column column-todo" id="column-todo">
-                <h2 class="column__title">todo:</h2>
+                <h2 class="column__title column__title--blue">todo:</h2>
                 <div class="column__cards" id="column-cards"></div>
                 <button class="column__btn-add" type="button">Add todo</button>
             </div>
             
             <div class="column column-progress" id="column-progress">
-                <h2 class="column__title">in progress</h2>
-                <div class="card">	
-                    <div class="card__row">
-                        <h3 class="card__row-title">Title</h3>
-                        <div class="card__row">
-                            <button class="card__row-btn" type="button">Back</button>
-                            <button class="card__row-btn" type="button">Complete</button>
+                <h2 class="column__title column__title--pink">in progress</h2>
+                <div class="card card--pink">	
+                    <div class="card__content">
+                        <h3 class="card__content-title">Title</h3>
+                        <div class="card__content">
+                            <button class="card__content-btn" type="button">Back</button>
+                            <button class="card__content-btn" type="button">Complete</button>
                         </div>
                     </div>
-                    <div class="card__row"> 
-                        <p class="card__row-description">Description</p>
+                    <div class="card__content"> 
+                        <p class="card__content-description">Description</p>
                     </div>
-                    <div class="card__row">    
-                        <p class="card__row-user">User</p>
-                        <p class="card__row-time">Time</p>
+                    <div class="card__content">    
+                        <p class="card__content-user">User</p>
+                        <p class="card__content-time">Time</p>
                     </div>
                 </div>
             </div>
             
             <div class="column column-done" id="column-done">
-                <h2 class="column__title">done</h2>
-                <div class="card">	
-                    <div class="card__row">
-                        <h3 class="card__row-title">Title</h3>
-                        <button class="card__row-btn" type="button">Delete</button>
+                <h2 class="column__title column__title--orange">done</h2>
+                <div class="card card--orange">	
+                    <div class="card__content">
+                        <h3 class="card__content-title">Title</h3>
+                        <button class="card__content-btn" type="button">Delete</button>
                     </div>
-                    <div class="card__row"> 
-                        <p class="card__row-description">Description</p>
+                    <div class="card__content"> 
+                        <p class="card__content-description">Description</p>
                     </div>
-                    <div class="card__row">    
-                        <p class="card__row-user">User</p>
-                        <p class="card__row-time">Time</p>
+                    <div class="card__content">    
+                        <p class="card__content-user">User</p>
+                        <p class="card__content-time">Time</p>
                     </div>
                 </div>
                 <button class="column__btn-delete-all" type="button">Delete all</button>
-                <div class="modal" id="modal-delete-all">
+                <div class="modal-warning" id="modal-delete-all">
                     <div class="card card-modal">
-                        <div class="card__row"> 
-                            <p class="card__row-description">Are you positive that you want to delete every complete task?</p>
+                        <div class="card__content"> 
+                            <p class="card__content-description">Are you positive that you want to delete every complete task?</p>
                         </div>
-                        <div class="card__row">
-                            <button class="card__row-btn" id="cancel-modal" type="button">Cancel</button>
-                            <button class="card__row-btn" id="confirm-delete-all" type="button">Confirm</button>
+                        <div class="card__content">
+                            <button class="card__content-btn" id="cancel-modal" type="button">Cancel</button>
+                            <button class="card__content-btn" id="confirm-delete-all" type="button">Confirm</button>
                         </div>
                     </div>
                 </div>

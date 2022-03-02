@@ -1,25 +1,33 @@
 .card {
-	display: flex;
-	flex-direction: column;
-	padding: 5px;
-	margin-top: 10px;
-	border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 15px;
+  &--blue {
+    background-color: $light-blue;
+  }
+  &--pink {
+    background-color: $light-purplish-pink;
+  }
+  &--orange {
+    background-color: $light-orange;
+  }
 }
 
-.card__row {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	margin-bottom: 10px;
+.card__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
 
-	&-title,
-	&-description,
-	&-user {
-		padding: 2px 5px;
-		box-sizing: border-box;
-		font-size: 16px;
-		font-weight: normal;
-		cursor: pointer;
-	}
+  &-title,
+  &-description,
+  &-user {
+    padding: 2px 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: normal;
+    cursor: pointer;
+  }
 }
-
