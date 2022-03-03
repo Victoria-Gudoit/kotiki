@@ -2,10 +2,10 @@ import {
   TODO_TASK_KEY,
   getTodosData,
   setTodosData,
-} from "../localStorageAPI.js";
+} from "../services/localStorageAPI.js"
 import { clockInCard } from "./Clock.js";
-import { getUUID, getValueOption } from "../utils.js";
-import { createCard, createInput } from "../templates.js";
+import { getUUID, getValueOption } from "../utils/utils.js"
+import { createCard, createInput } from "../templates/templates.js"
 
 initCard();
 
