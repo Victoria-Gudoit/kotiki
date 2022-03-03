@@ -2,10 +2,11 @@ import {
   TODO_TASK_KEY,
   getTodosData,
   setTodosData,
-} from "../services/localStorageAPI.js"
+} from "../services/localStorageAPI.js";
 import { clockInCard } from "./Clock.js";
-import { getUUID, getValueOption } from "../utils/utils.js"
-import { createCard, createInput } from "../templates/templates.js"
+import { getUUID, getValueOption } from "../utils/utils.js";
+import { createCard, createInput } from "../templates/templates.js";
+import { columnTodo } from "../components/Counter.js";
 
 initCard();
 
@@ -46,6 +47,7 @@ function Card(title, description) {
         });
         todosWrapper.appendChild(card);
       });
+      columnTodo.showAmountOfCards();
     }
   };
   this.edit = function () {
