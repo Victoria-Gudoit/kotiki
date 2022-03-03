@@ -1,7 +1,13 @@
-.modal {
-  position: absolute;
-  display: none;
-  max-width: 225px;
+.modal-warning {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease 0s;
+
+  &__open {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease 0s;
+  }
 }
 
 .card-modal {

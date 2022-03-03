@@ -4,6 +4,7 @@
   padding: 5px;
   margin-top: 10px;
   border-radius: 15px;
+
   &--blue {
     background-color: $light-blue;
   }
@@ -29,19 +30,9 @@
     font-size: 16px;
     font-weight: normal;
     cursor: pointer;
+
+    &--center {
+      margin: 0 auto;
+    }
   }
-}
-
-.card__input-visible {
-  width: 120px;
-  outline: none;
-}
-
-.card__content-visible {
-  position: relative;
-  visibility: visible;
-}
-.card__content-hidden {
-  position: absolute;
-  visibility: hidden;
 }

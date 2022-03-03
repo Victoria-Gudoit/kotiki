@@ -7,11 +7,13 @@
   border: solid 0.1px;
   border-radius: 8px;
   cursor: pointer;
+
   &--arrow {
     position: relative;
     width: 20px;
     height: 25px;
   }
+
   &--arrow::before {
     content: ">";
     position: absolute;
