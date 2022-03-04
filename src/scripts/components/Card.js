@@ -3,10 +3,19 @@ import {
   getTodosData,
   setTodosData,
 } from "../services/localStorageAPI.js";
+import {
+  IN_PROGRESS_TASK_KEY,
+  getTodosInProgressData,
+  setTodosInProgressData,
+} from "../services/localStorageAPI.js";
 import { clockInCard } from "./Clock.js";
 import { getUUID, getValueOption } from "../utils/utils.js";
-import { createCard, createInput } from "../templates/templates.js";
-import { columnTodo } from "../components/Counter.js";
+import {
+  createCard,
+  createInput,
+  createCardInProgress,
+} from "../templates/templates.js";
+import { columnTodo } from "./counter.js";
 
 initCard();
 
@@ -15,6 +24,11 @@ function initCard() {
   tasks.forEach((task) => {
     const card = new Card(task);
     card.render();
+  });
+  const tasksInProgress = getTodosData(IN_PROGRESS_TASK_KEY);
+  tasksInProgress.forEach((task) => {
+    const cardInProgress = new Card(task);
+    cardInProgress.renderCardInProgress();
   });
 }
 
@@ -43,6 +57,10 @@ function Card(title, description) {
             event.target.textContent === "Save"
           ) {
             this.save();
+          }
+          if (event.target.dataset.todo) {
+            this.moveCardInProgres();
+            this.renderCardInProgress();
           }
         });
         todosWrapper.appendChild(card);
@@ -104,6 +122,34 @@ function Card(title, description) {
     });
     setTodosData(TODO_TASK_KEY, tasks);
   };
-}
 
+  this.moveCardInProgres = function () {
+    this.card = event.target.closest(".card");
+    this.id = this.card.id;
+    const tasks = getTodosData(TODO_TASK_KEY);
+    const taskInProgress = getTodosInProgressData(IN_PROGRESS_TASK_KEY);
+
+    tasks.map((task, index) => {
+      if (task.id === this.id) {
+        taskInProgress.push(task);
+        tasks.splice(index, 1);
+      }
+    });
+    setTodosData(TODO_TASK_KEY, tasks);
+    this.render();
+
+    setTodosInProgressData(IN_PROGRESS_TASK_KEY, taskInProgress);
+  };
+
+  this.renderCardInProgress = function () {
+    const taskInProgress = getTodosInProgressData(IN_PROGRESS_TASK_KEY);
+    const columnInProgress = document.querySelector("#column-cards-progress");
+    columnInProgress.innerHTML = "";
+    taskInProgress.forEach((task) => {
+      const cardImProgress = createCardInProgress(task);
+
+      columnInProgress.appendChild(cardImProgress);
+    });
+  };
+}
 export { Card };
