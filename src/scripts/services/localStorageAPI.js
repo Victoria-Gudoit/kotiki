@@ -9,4 +9,24 @@ function getTodosData(key) {
   return (data ??= []);
 }
 
-export { TODO_TASK_KEY, setTodosData, getTodosData };
+////////////////////
+
+const IN_PROGRESS_TASK_KEY = "in-progress-data";
+
+function setTodosInProgressData(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+function getTodosInProgressData(key) {
+  let data = JSON.parse(localStorage.getItem(key));
+  return (data ??= []);
+}
+
+export {
+  TODO_TASK_KEY,
+  setTodosData,
+  getTodosData,
+  IN_PROGRESS_TASK_KEY,
+  setTodosInProgressData,
+  getTodosInProgressData,
+};
