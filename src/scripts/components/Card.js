@@ -2,8 +2,6 @@ import {
   TODO_TASK_KEY,
   getTodosData,
   setTodosData,
-} from "../services/localStorageAPI.js";
-import {
   IN_PROGRESS_TASK_KEY,
   getTodosInProgressData,
   setTodosInProgressData,
@@ -15,7 +13,7 @@ import {
   createInput,
   createCardInProgress,
 } from "../templates/templates.js";
-import { columnTodo } from "./counter.js";
+import { counter } from "../components/Counter.js";
 
 initCard();
 
@@ -65,7 +63,7 @@ function Card(title, description) {
         });
         todosWrapper.appendChild(card);
       });
-      columnTodo.showAmountOfCards();
+      counter.cardsInColumnTodo();
     }
   };
   this.edit = function () {
