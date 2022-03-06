@@ -3,7 +3,7 @@ import {
   TODO_TASK_KEY,
   setTodosData,
   getTodosData,
-} from "../services/localStorageAPI.js"
+} from "../services/localStorageAPI.js";
 
 const btnAdd = new ModalToDo(document.querySelector(".modal-window"));
 
