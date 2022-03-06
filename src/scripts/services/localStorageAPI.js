@@ -10,14 +10,6 @@ const BASE_SERVISE = {
     let data = JSON.parse(localStorage.getItem(key));
     return (data ??= []);
   },
-  setTodosInProgressData(key, data) {
-    localStorage.setItem(key, JSON.stringify(data));
-  },
-
-  getTodosInProgressData(key) {
-    let data = JSON.parse(localStorage.getItem(key));
-    return (data ??= []);
-  },
 };
 
 export { BASE_SERVISE };
