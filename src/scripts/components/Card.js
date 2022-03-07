@@ -8,8 +8,6 @@ import {
 } from "../templates/templates.js";
 import { counter } from "../components/Counter.js";
 
-initCard();
-
 function initCard() {
   const tasks = BASE_SERVISE.getTodosData();
   tasks.forEach((task) => {
@@ -143,4 +141,4 @@ function Card(title, description) {
     });
   };
 }
-export { Card };
+export { Card, initCard };

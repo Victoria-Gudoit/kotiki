@@ -57,6 +57,4 @@ function ModalToDo(root) {
   };
 }
 
-modalToDo.init();
-
 export { modalToDo };
