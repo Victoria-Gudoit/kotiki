@@ -16,7 +16,9 @@ function initCard() {
     const card = new Card(task);
     card.render();
   });
-  const tasksInProgress = getTodosData(IN_PROGRESS_TASK_KEY);
+  const tasksInProgress = BASE_SERVISE.getTodosData(
+    BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY
+  );
   tasksInProgress.forEach((task) => {
     const cardInProgress = new Card(task);
     cardInProgress.renderCardInProgress();
@@ -111,14 +113,16 @@ function Card(title, description) {
         element.description = this.cardDescription.textContent;
       }
     });
-    setTodosData(TODO_TASK_KEY, tasks);
+    BASE_SERVISE.setTodosData(BASE_SERVISE.keys.TODO_TASK_KEY, tasks);
   };
 
   this.moveCardInProgres = function () {
     this.card = event.target.closest(".card");
     this.id = this.card.id;
     const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
-    const taskInProgress = getTodosInProgressData(IN_PROGRESS_TASK_KEY);
+    const taskInProgress = BASE_SERVISE.getTodosData(
+      BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY
+    );
 
     tasks.map((task, index) => {
       if (task.id === this.id) {
@@ -129,11 +133,16 @@ function Card(title, description) {
     BASE_SERVISE.setTodosData(BASE_SERVISE.keys.TODO_TASK_KEY, tasks);
     this.render();
 
-    setTodosInProgressData(IN_PROGRESS_TASK_KEY, taskInProgress);
+    BASE_SERVISE.setTodosData(
+      BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY,
+      taskInProgress
+    );
   };
 
   this.renderCardInProgress = function () {
-    const taskInProgress = getTodosInProgressData(IN_PROGRESS_TASK_KEY);
+    const taskInProgress = BASE_SERVISE.getTodosData(
+      BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY
+    );
     const columnInProgress = document.querySelector("#column-cards-progress");
     columnInProgress.innerHTML = "";
     taskInProgress.forEach((task) => {
