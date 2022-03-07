@@ -119,7 +119,6 @@ function Card(title, description) {
   this.moveCardInProgres = function () {
     this.card = event.target.closest(".card");
     this.id = this.card.id;
-    console.log(this.id);
     const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
     const taskInProgress = BASE_SERVISE.getTodosData(
       BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY
