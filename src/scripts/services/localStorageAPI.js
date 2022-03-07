@@ -1,13 +1,21 @@
+"use strict";
 const BASE_SERVISE = {
   keys: {
     TODO_TASK_KEY: "todos-data",
     IN_PROGRESS_TASK_KEY: "in-progress-data",
   },
-  setTodosData(key, data) {
-    localStorage.setItem(key, JSON.stringify(data));
+  setTodosData(data) {
+    localStorage.setItem(this.keys.TODO_TASK_KEY, JSON.stringify(data));
   },
-  getTodosData(key) {
-    let data = JSON.parse(localStorage.getItem(key));
+  getTodosData() {
+    let data = JSON.parse(localStorage.getItem(this.keys.TODO_TASK_KEY));
+    return (data ??= []);
+  },
+  setTodosInProgressData(data) {
+    localStorage.setItem(this.keys.IN_PROGRESS_TASK_KEY, JSON.stringify(data));
+  },
+  getTodosInProgressData() {
+    let data = JSON.parse(localStorage.getItem(this.keys.IN_PROGRESS_TASK_KEY));
     return (data ??= []);
   },
 };

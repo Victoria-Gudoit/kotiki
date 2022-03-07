@@ -11,14 +11,12 @@ import { counter } from "../components/Counter.js";
 initCard();
 
 function initCard() {
-  const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
+  const tasks = BASE_SERVISE.getTodosData();
   tasks.forEach((task) => {
     const card = new Card(task);
     card.render();
   });
-  const tasksInProgress = BASE_SERVISE.getTodosData(
-    BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY
-  );
+  const tasksInProgress = BASE_SERVISE.getTodosInProgressData();
   tasksInProgress.forEach((task) => {
     const cardInProgress = new Card(task);
     cardInProgress.renderCardInProgress();
@@ -33,7 +31,7 @@ function Card(title, description) {
   this.time = clockInCard();
 
   this.render = function () {
-    const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
+    const tasks = BASE_SERVISE.getTodosData();
     const todosWrapper = document.querySelector("#column-cards");
     todosWrapper.innerHTML = "";
     if (tasks.length) {
@@ -106,23 +104,21 @@ function Card(title, description) {
 
     this.cardBtnEdit.textContent = "Edit";
 
-    const tasks = getTodosData(TODO_TASK_KEY);
+    const tasks = BASE_SERVISE.getTodosData();
     tasks.forEach((element) => {
       if (element.id === this.id) {
         element.title = this.cardTitle.textContent;
         element.description = this.cardDescription.textContent;
       }
     });
-    BASE_SERVISE.setTodosData(BASE_SERVISE.keys.TODO_TASK_KEY, tasks);
+    BASE_SERVISE.setTodosData(tasks);
   };
 
   this.moveCardInProgres = function () {
     this.card = event.target.closest(".card");
     this.id = this.card.id;
-    const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
-    const taskInProgress = BASE_SERVISE.getTodosData(
-      BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY
-    );
+    const tasks = BASE_SERVISE.getTodosData();
+    const taskInProgress = BASE_SERVISE.getTodosInProgressData();
 
     tasks.map((task, index) => {
       if (task.id === this.id) {
@@ -130,19 +126,14 @@ function Card(title, description) {
         tasks.splice(index, 1);
       }
     });
-    BASE_SERVISE.setTodosData(BASE_SERVISE.keys.TODO_TASK_KEY, tasks);
+    BASE_SERVISE.setTodosData(tasks);
     this.render();
 
-    BASE_SERVISE.setTodosData(
-      BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY,
-      taskInProgress
-    );
+    BASE_SERVISE.setTodosInProgressData(taskInProgress);
   };
 
   this.renderCardInProgress = function () {
-    const taskInProgress = BASE_SERVISE.getTodosData(
-      BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY
-    );
+    const taskInProgress = BASE_SERVISE.getTodosInProgressData();
     const columnInProgress = document.querySelector("#column-cards-progress");
     columnInProgress.innerHTML = "";
     taskInProgress.forEach((task) => {
