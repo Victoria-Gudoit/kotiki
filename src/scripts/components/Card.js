@@ -1,11 +1,4 @@
-import {
-  TODO_TASK_KEY,
-  getTodosData,
-  setTodosData,
-  IN_PROGRESS_TASK_KEY,
-  getTodosInProgressData,
-  setTodosInProgressData,
-} from "../services/localStorageAPI.js";
+import { BASE_SERVISE } from "../services/localStorageAPI.js";
 import { clockInCard } from "./Clock.js";
 import { getUUID, getValueOption } from "../utils/utils.js";
 import {
@@ -18,12 +11,14 @@ import { counter } from "../components/Counter.js";
 initCard();
 
 function initCard() {
-  const tasks = getTodosData(TODO_TASK_KEY);
+  const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
   tasks.forEach((task) => {
     const card = new Card(task);
     card.render();
   });
-  const tasksInProgress = getTodosData(IN_PROGRESS_TASK_KEY);
+  const tasksInProgress = BASE_SERVISE.getTodosData(
+    BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY
+  );
   tasksInProgress.forEach((task) => {
     const cardInProgress = new Card(task);
     cardInProgress.renderCardInProgress();
@@ -38,7 +33,7 @@ function Card(title, description) {
   this.time = clockInCard();
 
   this.render = function () {
-    const tasks = getTodosData(TODO_TASK_KEY);
+    const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
     const todosWrapper = document.querySelector("#column-cards");
     todosWrapper.innerHTML = "";
     if (tasks.length) {
@@ -118,14 +113,17 @@ function Card(title, description) {
         element.description = this.cardDescription.textContent;
       }
     });
-    setTodosData(TODO_TASK_KEY, tasks);
+    BASE_SERVISE.setTodosData(BASE_SERVISE.keys.TODO_TASK_KEY, tasks);
   };
 
   this.moveCardInProgres = function () {
     this.card = event.target.closest(".card");
     this.id = this.card.id;
-    const tasks = getTodosData(TODO_TASK_KEY);
-    const taskInProgress = getTodosInProgressData(IN_PROGRESS_TASK_KEY);
+    console.log(this.id);
+    const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
+    const taskInProgress = BASE_SERVISE.getTodosData(
+      BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY
+    );
 
     tasks.map((task, index) => {
       if (task.id === this.id) {
@@ -133,14 +131,19 @@ function Card(title, description) {
         tasks.splice(index, 1);
       }
     });
-    setTodosData(TODO_TASK_KEY, tasks);
+    BASE_SERVISE.setTodosData(BASE_SERVISE.keys.TODO_TASK_KEY, tasks);
     this.render();
 
-    setTodosInProgressData(IN_PROGRESS_TASK_KEY, taskInProgress);
+    BASE_SERVISE.setTodosData(
+      BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY,
+      taskInProgress
+    );
   };
 
   this.renderCardInProgress = function () {
-    const taskInProgress = getTodosInProgressData(IN_PROGRESS_TASK_KEY);
+    const taskInProgress = BASE_SERVISE.getTodosData(
+      BASE_SERVISE.keys.IN_PROGRESS_TASK_KEY
+    );
     const columnInProgress = document.querySelector("#column-cards-progress");
     columnInProgress.innerHTML = "";
     taskInProgress.forEach((task) => {
