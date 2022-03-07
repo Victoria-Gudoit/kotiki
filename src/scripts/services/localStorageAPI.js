@@ -1,4 +1,3 @@
-"use strict";
 const BASE_SERVISE = {
   keys: {
     TODO_TASK_KEY: "todos-data",
