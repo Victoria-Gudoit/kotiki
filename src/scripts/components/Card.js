@@ -1,11 +1,4 @@
-import {
-  TODO_TASK_KEY,
-  getTodosData,
-  setTodosData,
-  IN_PROGRESS_TASK_KEY,
-  getTodosInProgressData,
-  setTodosInProgressData,
-} from "../services/localStorageAPI.js";
+import { BASE_SERVISE } from "../services/localStorageAPI.js";
 import { clockInCard } from "./Clock.js";
 import { getUUID, getValueOption } from "../utils/utils.js";
 import {
@@ -18,7 +11,7 @@ import { counter } from "../components/Counter.js";
 initCard();
 
 function initCard() {
-  const tasks = getTodosData(TODO_TASK_KEY);
+  const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
   tasks.forEach((task) => {
     const card = new Card(task);
     card.render();
@@ -38,7 +31,7 @@ function Card(title, description) {
   this.time = clockInCard();
 
   this.render = function () {
-    const tasks = getTodosData(TODO_TASK_KEY);
+    const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
     const todosWrapper = document.querySelector("#column-cards");
     todosWrapper.innerHTML = "";
     if (tasks.length) {
@@ -124,7 +117,7 @@ function Card(title, description) {
   this.moveCardInProgres = function () {
     this.card = event.target.closest(".card");
     this.id = this.card.id;
-    const tasks = getTodosData(TODO_TASK_KEY);
+    const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
     const taskInProgress = getTodosInProgressData(IN_PROGRESS_TASK_KEY);
 
     tasks.map((task, index) => {
@@ -133,7 +126,7 @@ function Card(title, description) {
         tasks.splice(index, 1);
       }
     });
-    setTodosData(TODO_TASK_KEY, tasks);
+    BASE_SERVISE.setTodosData(BASE_SERVISE.keys.TODO_TASK_KEY, tasks);
     this.render();
 
     setTodosInProgressData(IN_PROGRESS_TASK_KEY, taskInProgress);
