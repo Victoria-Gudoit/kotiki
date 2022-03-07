@@ -39,14 +39,14 @@ function ModalToDo(root) {
     this.root.classList.remove("modal__active");
   };
   this.addTask = function () {
-    const tasks = BASE_SERVISE.getTodosData(BASE_SERVISE.keys.TODO_TASK_KEY);
+    const tasks = BASE_SERVISE.getTodosData();
     const titleTask = document.querySelector("#modal-title");
     const descriptionTask = document.querySelector("#modal-text");
     const card = new Card(titleTask.value, descriptionTask.value);
 
     tasks.push(card);
     if (titleTask.value && descriptionTask.value) {
-      BASE_SERVISE.setTodosData(BASE_SERVISE.keys.TODO_TASK_KEY, tasks);
+      BASE_SERVISE.setTodosData(tasks);
       card.render();
       titleTask.value = "";
       descriptionTask.value = "";
