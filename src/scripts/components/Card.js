@@ -35,28 +35,28 @@ function Card(title, description) {
     if (tasks.length) {
       tasks.forEach((task) => {
         const card = createCard(task);
-        card.addEventListener("click", (event) => {
-          if (
-            event.target.dataset.edit &&
-            event.target.textContent === "Edit"
-          ) {
-            this.edit();
-          } else if (
-            event.target.dataset.edit &&
-            event.target.textContent === "Save"
-          ) {
-            this.save();
-          }
-          if (event.target.dataset.todo) {
-            this.moveCardInProgres();
-            this.renderCardInProgress();
-          }
-        });
+        card.addEventListener("click", this.handleCardTodo);
         todosWrapper.appendChild(card);
+        counter.cardsInColumnTodo();
       });
-      counter.cardsInColumnTodo();
     }
   };
+
+  this.handleCardTodo = (event) => {
+    switch (event.target.dataset && event.target.textContent.toLowerCase()) {
+      case "edit":
+        this.edit();
+        break;
+      case "save":
+        this.save();
+        break;
+    }
+    if (event.target.dataset.arrow) {
+      this.moveCardInProgres();
+      this.renderCardInProgress();
+    }
+  };
+
   this.edit = function () {
     this.card = event.target.closest(".card");
     this.id = this.card.id;
@@ -135,10 +135,35 @@ function Card(title, description) {
     const columnInProgress = document.querySelector("#column-cards-progress");
     columnInProgress.innerHTML = "";
     taskInProgress.forEach((task) => {
-      const cardImProgress = createCardInProgress(task);
-
-      columnInProgress.appendChild(cardImProgress);
+      const cardInProgress = createCardInProgress(task);
+      cardInProgress.addEventListener("click", this.handleCardInProgress);
+      columnInProgress.appendChild(cardInProgress);
     });
+  };
+
+  this.handleCardInProgress = (event) => {
+    if (event.target.dataset.action) {
+      this.moveCardBack();
+      this.renderCardInProgress();
+      this.render();
+    }
+  };
+
+  this.moveCardBack = function () {
+    this.card = event.target.closest(".card");
+    this.id = this.card.id;
+    const tasks = BASE_SERVISE.getTodosData();
+    const taskInProgress = BASE_SERVISE.getTodosInProgressData();
+
+    taskInProgress.map((task, index) => {
+      if (task.id === this.id) {
+        tasks.push(task);
+        taskInProgress.splice(index, 1);
+      }
+    });
+
+    BASE_SERVISE.setTodosInProgressData(taskInProgress);
+    BASE_SERVISE.setTodosData(tasks);
   };
 }
 export { Card, initCard };
