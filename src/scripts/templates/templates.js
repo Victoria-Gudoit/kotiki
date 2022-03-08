@@ -37,7 +37,7 @@ function createCard(task) {
   cardBtnDelete.type = "button";
   cardBtnArrow.type = "button";
   cardBtnEdit.setAttribute("data-edit", "edit");
-  cardBtnArrow.setAttribute("data-todo", "moving");
+  cardBtnArrow.setAttribute("data-arrow", "moving");
 
   cardMain.append(cardDescription, cardBtnArrow);
   cardButtons.append(cardBtnEdit, cardBtnDelete);
@@ -74,6 +74,7 @@ function createCardInProgress(task) {
   card.id = task.id;
   cardHeader.id = "headercard";
   cardMain.id = "maincard";
+  cardBtnBack.setAttribute("data-action", "back");
 
   cardHeader.append(cardTitle, cardButtons);
   cardButtons.append(cardBtnBack, cardBtnComplete);
