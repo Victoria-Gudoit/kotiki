@@ -38,6 +38,7 @@ function createCard(task) {
   cardBtnArrow.type = "button";
   cardBtnEdit.setAttribute("data-edit", "edit");
   cardBtnArrow.setAttribute("data-arrow", "moving");
+  cardBtnDelete.setAttribute("data-delete", "delete");
 
   cardMain.append(cardDescription, cardBtnArrow);
   cardButtons.append(cardBtnEdit, cardBtnDelete);

@@ -51,12 +51,15 @@ function Card(title, description) {
         this.save();
         break;
     }
+
     if (event.target.dataset.arrow) {
       this.moveCardInProgres();
       this.renderCardInProgress();
     }
+    if (event.target.dataset.delete) {
+      this.delete();
+    }
   };
-
   this.edit = function () {
     this.card = event.target.closest(".card");
     this.id = this.card.id;
@@ -110,6 +113,20 @@ function Card(title, description) {
       }
     });
     BASE_SERVISE.setTodosData(tasks);
+  };
+
+  this.delete = function () {
+    this.card = event.target.closest(".card");
+    this.id = this.card.id;
+    const tasks = BASE_SERVISE.getTodosData();
+
+    tasks.map((task, index) => {
+      if (task.id === this.id) {
+        tasks.splice(index, 1);
+      }
+    });
+    BASE_SERVISE.setTodosData(tasks);
+    this.render();
   };
 
   this.moveCardInProgres = function () {
