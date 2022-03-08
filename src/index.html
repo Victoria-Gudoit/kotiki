@@ -32,26 +32,16 @@
             
             <div class="column column-done" id="column-done">
                 <h2 class="column__title column__title--orange">done <span class="column__counter"></span></h2>
-                <div class="card card--orange">	
-                    <div class="card__content">
-                        <h3 class="card__content-title">Title</h3>
-                        <button class="card__content-btn" type="button">Delete</button>
-                    </div>
-                    <div class="card__content"> 
-                        <p class="card__content-description">Description</p>
-                    </div>
-                    <div class="card__content">    
-                        <p class="card__content-user">User</p>
-                        <p class="card__content-time">Time</p>
-                    </div>
-                </div>
-                <button class="column__btn-delete-all" type="button">Delete all</button>
-                <div class="modal-warning" id="modal-delete-all">
+                <div class="column__cards" id="column-cards-progress"></div>
+
+            
+                <button class="column__btn-delete-all" id="delete-all" type="button">Delete all</button></div>
+                <div class="modal-warning" id="modal-warning">
                     <div class="card card-modal">
-                        <div class="card__content"> 
-                            <p class="card__content-description card__content-description--center">Are you positive that you want to delete every complete task?</p>
+                        <div class="card__content "> 
+                            <p class="card__content-description"></p>
                         </div>
-                        <div class="card__content">
+                        <div class="card__content card__content--center">
                             <button class="card__content-btn" id="cancel-modal" type="button">Cancel</button>
                             <button class="card__content-btn" id="confirm-delete-all" type="button">Confirm</button>
                         </div>

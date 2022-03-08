@@ -1,6 +1,20 @@
 .modal-warning {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  margin: 0 auto;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   visibility: hidden;
   opacity: 0;
+  background: rgba(0, 0, 0, 0.6);
   transition: all 0.5s ease 0s;
 
   &__open {
@@ -11,11 +25,10 @@
 }
 
 .card-modal {
-  display: flex;
-  flex-direction: column;
   font-family: $font-palanquin-dark;
   text-align: center;
-  background-color: $light-orange;
+  background-color: rgb(255, 211, 211);
+  max-width: 300px;
 }
 
 .modal-window {

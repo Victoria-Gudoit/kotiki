@@ -7,12 +7,14 @@ import {
   createCardInProgress,
 } from "../templates/templates.js";
 import { counter } from "../components/Counter.js";
+import { modalWarning } from "../components/ModalWarning.js";
 
 function initCard() {
   const tasks = BASE_SERVISE.getTodosData();
   tasks.forEach((task) => {
     const card = new Card(task);
     card.render();
+    card.stopMovingCards();
   });
   const tasksInProgress = BASE_SERVISE.getTodosInProgressData();
   tasksInProgress.forEach((task) => {
@@ -55,6 +57,8 @@ function Card(title, description) {
     if (event.target.dataset.arrow) {
       this.moveCardInProgres();
       this.renderCardInProgress();
+      this.stopMovingCards();
+      this.showModalWarning();
     }
     if (event.target.dataset.delete) {
       this.delete();
@@ -156,6 +160,28 @@ function Card(title, description) {
       cardInProgress.addEventListener("click", this.handleCardInProgress);
       columnInProgress.appendChild(cardInProgress);
     });
+  };
+
+  this.stopMovingCards = function () {
+    const taskInProgress = BASE_SERVISE.getTodosInProgressData();
+    if (taskInProgress.length >= 6) {
+      const arrowBtns = document.querySelectorAll("[data-arrow=moving]");
+      arrowBtns.forEach((btn) => {
+        btn.disabled = true;
+      });
+    }
+  };
+
+  this.showModalWarning = function () {
+    const modalWindow = document.querySelector("#modal-warning");
+    const modalWarningText = modalWindow.querySelector(
+      ".card__content-description"
+    );
+    const taskInProgress = BASE_SERVISE.getTodosInProgressData();
+    if (taskInProgress.length >= 6) {
+      modalWarning.open();
+      modalWarningText.textContent = "Sorry! You can't add more than 6 cards!";
+    }
   };
 
   this.handleCardInProgress = (event) => {
