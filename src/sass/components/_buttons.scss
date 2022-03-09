@@ -8,6 +8,10 @@
   border-radius: 8px;
   cursor: pointer;
 
+  &__hidden {
+    display: none;
+  }
+
   &--arrow {
     position: relative;
     width: 20px;

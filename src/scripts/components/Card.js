@@ -135,6 +135,17 @@ function Card(title, description) {
     this.render();
   };
 
+  this.renderCardInProgress = function () {
+    const tasksInProgress = BASE_SERVISE.getTodosInProgress();
+    const columnInProgress = document.querySelector("#column-cards-progress");
+    columnInProgress.innerHTML = "";
+    tasksInProgress.forEach((task) => {
+      const cardInProgress = createCardInProgress(task);
+      cardInProgress.addEventListener("click", this.handleCardInProgress);
+      columnInProgress.appendChild(cardInProgress);
+    });
+  };
+
   this.handleCardInProgress = (event) => {
     if (event.target.dataset.action) {
       this.moveCardBack();
@@ -162,17 +173,6 @@ function Card(title, description) {
     this.render();
 
     BASE_SERVISE.setTodosInProgress(tasksInProgress);
-  };
-
-  this.renderCardInProgress = function () {
-    const tasksInProgress = BASE_SERVISE.getTodosInProgress();
-    const columnInProgress = document.querySelector("#column-cards-progress");
-    columnInProgress.innerHTML = "";
-    tasksInProgress.forEach((task) => {
-      const cardInProgress = createCardInProgress(task);
-      cardInProgress.addEventListener("click", this.handleCardInProgress);
-      columnInProgress.appendChild(cardInProgress);
-    });
   };
 
   this.moveCardBack = function () {
@@ -207,10 +207,12 @@ function Card(title, description) {
     const modalWarningText = modalWindow.querySelector(
       ".card__content-description"
     );
+    const btnConfirm = document.querySelector("#confirm-delete-all");
     const tasksInProgress = BASE_SERVISE.getTodosInProgress();
     if (tasksInProgress.length >= 6) {
       modalWarning.open();
       modalWarningText.textContent = "Sorry! You can't add more than 6 cards!";
+      btnConfirm.classList.add("card__content-btn__hidden");
     }
   };
 
