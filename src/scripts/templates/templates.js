@@ -107,7 +107,7 @@ function createCardInColumnDone(task) {
   card.id = task.id;
   cardHeader.id = "headercard";
   cardMain.id = "maincard";
-  cardBtnDelete.setAttribute("data-delete", "btn");
+  cardBtnDelete.setAttribute("data-remove", "done");
 
   cardHeader.append(cardTitle, cardButtons);
   cardButtons.append(cardBtnDelete);
