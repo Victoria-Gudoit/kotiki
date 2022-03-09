@@ -119,7 +119,7 @@ function createCardInColumnDone(task) {
 }
 
 function createInput() {
-  const inputEdit = createElement("input", "card__input-visible");
+  const inputEdit = createElement("input", "card__input");
   inputEdit.type = "text";
   return inputEdit;
 }

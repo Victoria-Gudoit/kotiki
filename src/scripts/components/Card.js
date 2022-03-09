@@ -59,7 +59,6 @@ function Card(title, description) {
         this.save();
         break;
     }
-
     if (event.target.dataset.arrow) {
       this.moveCardInProgress();
       this.renderCardInProgress();
@@ -97,22 +96,19 @@ function Card(title, description) {
     this.mainCard.prepend(this.inputEditDescriptionCard);
 
     this.inputEditDescriptionCard.value = this.textDescription;
-    this.cardDescription.classList.add("card__content-hidden");
+    this.cardDescription.classList.toggle("card__content-hidden");
 
     this.cardBtnEdit = this.card.querySelector("#edit");
+
     this.cardBtnEdit.textContent = "Save";
   };
   this.save = function () {
-    this.cardTitle.classList.remove("card__content-hidden");
-    this.cardTitle.classList.add("card__content-visible");
+    this.cardTitle.classList.toggle("card__content-hidden");
     this.cardTitle.textContent = this.inputEditTitleCard.value;
     this.inputEditTitleCard.remove();
-
-    this.cardDescription.classList.remove("card__content-hidden");
-    this.cardDescription.classList.add("card__content-visible");
+    this.cardDescription.classList.toggle("card__content-hidden");
     this.cardDescription.textContent = this.inputEditDescriptionCard.value;
     this.inputEditDescriptionCard.remove();
-
     this.cardBtnEdit.textContent = "Edit";
 
     const tasks = BASE_SERVISE.getNewTodos();
