@@ -1,21 +1,33 @@
 const BASE_SERVISE = {
   keys: {
-    TODO_TASK_KEY: "todos-data",
-    IN_PROGRESS_TASK_KEY: "in-progress-data",
+    TODO_TASK_KEY: "new-todos",
+    IN_PROGRESS_TASK_KEY: "todos-in-progress",
+    DONE_TASK_KEY: "todos-done",
   },
-  setTodosData(data) {
-    localStorage.setItem(this.keys.TODO_TASK_KEY, JSON.stringify(data));
+  setNewTodos(todos) {
+    localStorage.setItem(this.keys.TODO_TASK_KEY, JSON.stringify(todos));
   },
-  getTodosData() {
-    let data = JSON.parse(localStorage.getItem(this.keys.TODO_TASK_KEY));
-    return (data ??= []);
+  getNewTodos() {
+    let todos = JSON.parse(localStorage.getItem(this.keys.TODO_TASK_KEY));
+    return (todos ??= []);
   },
-  setTodosInProgressData(data) {
-    localStorage.setItem(this.keys.IN_PROGRESS_TASK_KEY, JSON.stringify(data));
+
+  setTodosInProgress(todos) {
+    localStorage.setItem(this.keys.IN_PROGRESS_TASK_KEY, JSON.stringify(todos));
   },
-  getTodosInProgressData() {
-    let data = JSON.parse(localStorage.getItem(this.keys.IN_PROGRESS_TASK_KEY));
-    return (data ??= []);
+  getTodosInProgress() {
+    let todos = JSON.parse(
+      localStorage.getItem(this.keys.IN_PROGRESS_TASK_KEY)
+    );
+    return (todos ??= []);
+  },
+
+  setTodosInColumnDone(todos) {
+    localStorage.setItem(this.keys.DONE_TASK_KEY, JSON.stringify(todos));
+  },
+  getTodosInColumnDone() {
+    let todos = JSON.parse(localStorage.getItem(this.keys.DONE_TASK_KEY));
+    return (todos ??= []);
   },
 };
 

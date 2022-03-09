@@ -76,9 +76,41 @@ function createCardInProgress(task) {
   cardHeader.id = "headercard";
   cardMain.id = "maincard";
   cardBtnBack.setAttribute("data-action", "back");
+  cardBtnComplete.setAttribute("data-complete", "btn");
 
   cardHeader.append(cardTitle, cardButtons);
   cardButtons.append(cardBtnBack, cardBtnComplete);
+  cardMain.append(cardDescription);
+  cardFooter.append(cardUser, cardTime);
+  card.append(cardHeader, cardMain, cardFooter);
+
+  return card;
+}
+
+function createCardInColumnDone(task) {
+  const card = createElement("div", "card card--orange");
+  const cardHeader = createElement("div", "card__content");
+  const cardTitle = createElement("h3", "card__content-title", task.title);
+  const cardButtons = createElement("div", "card__content");
+  const cardBtnDelete = createElement("button", "card__content-btn", "Delete");
+  const cardMain = createElement("div", "card__content");
+  const cardDescription = createElement(
+    "p",
+    "card__content-description",
+    task.description
+  );
+  const cardFooter = createElement("div", "card__content");
+  const cardUser = createElement("p", "card__content-user", task.user);
+  const cardTime = createElement("p", "card__content-time", task.time);
+
+  cardBtnDelete.type = "button";
+  card.id = task.id;
+  cardHeader.id = "headercard";
+  cardMain.id = "maincard";
+  cardBtnDelete.setAttribute("data-delete", "btn");
+
+  cardHeader.append(cardTitle, cardButtons);
+  cardButtons.append(cardBtnDelete);
   cardMain.append(cardDescription);
   cardFooter.append(cardUser, cardTime);
   card.append(cardHeader, cardMain, cardFooter);
@@ -92,4 +124,10 @@ function createInput() {
   return inputEdit;
 }
 
-export { createCard, createElement, createInput, createCardInProgress };
+export {
+  createCard,
+  createElement,
+  createInput,
+  createCardInProgress,
+  createCardInColumnDone,
+};
