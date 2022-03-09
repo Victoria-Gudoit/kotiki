@@ -36,3 +36,12 @@
     cursor: pointer;
   }
 }
+.card__content-hidden {
+  position: absolute;
+  opacity: 0;
+}
+
+.card__input {
+  width: 120px;
+  outline: none;
+}
