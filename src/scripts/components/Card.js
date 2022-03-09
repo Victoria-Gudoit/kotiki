@@ -135,6 +135,17 @@ function Card(title, description) {
     this.render();
   };
 
+  this.handleCardInProgress = (event) => {
+    if (event.target.dataset.action) {
+      this.moveCardBack();
+      this.renderCardInProgress();
+      this.render();
+    } else if (event.target.dataset.complete) {
+      this.moveCardInColumnDone();
+      this.renderCardInColumnDone();
+    }
+  };
+
   this.moveCardInProgress = function () {
     this.card = event.target.closest(".card");
     this.id = this.card.id;
@@ -164,6 +175,23 @@ function Card(title, description) {
     });
   };
 
+  this.moveCardBack = function () {
+    this.card = event.target.closest(".card");
+    this.id = this.card.id;
+    const tasks = BASE_SERVISE.getNewTodos();
+    const taskInProgress = BASE_SERVISE.getTodosInProgress();
+
+    taskInProgress.map((task, index) => {
+      if (task.id === this.id) {
+        tasks.push(task);
+        taskInProgress.splice(index, 1);
+      }
+    });
+    this.renderCardInProgress;
+    BASE_SERVISE.setTodosInProgress(taskInProgress);
+    BASE_SERVISE.setNewTodos(tasks);
+  };
+
   this.stopMovingCards = function () {
     const tasksInProgress = BASE_SERVISE.getTodosInProgress();
     if (tasksInProgress.length >= 6) {
@@ -183,17 +211,6 @@ function Card(title, description) {
     if (tasksInProgress.length >= 6) {
       modalWarning.open();
       modalWarningText.textContent = "Sorry! You can't add more than 6 cards!";
-    }
-  };
-
-  this.handleCardInProgress = (event) => {
-    if (event.target.dataset.action) {
-      this.moveCardBack();
-      this.renderCardInProgress();
-      this.render();
-    } else if (event.target.dataset.complete) {
-      this.moveCardInColumnDone();
-      this.renderCardInColumnDone();
     }
   };
 
@@ -221,25 +238,29 @@ function Card(title, description) {
     columnDone.innerHTML = "";
     tasksInColumnDone.forEach((task) => {
       const cardInColumnDone = createCardInColumnDone(task);
+      cardInColumnDone.addEventListener("click", this.handleCardInColumnDone);
       columnDone.appendChild(cardInColumnDone);
     });
   };
 
-  this.moveCardBack = function () {
+  this.handleCardInColumnDone = (event) => {
+    if (event.target.dataset.remove) {
+      this.removeCardDone();
+    }
+  };
+
+  this.removeCardDone = function () {
     this.card = event.target.closest(".card");
     this.id = this.card.id;
-    const tasks = BASE_SERVISE.getNewTodos();
-    const taskInProgress = BASE_SERVISE.getTodosInProgress();
+    const tasksDone = BASE_SERVISE.getTodosInColumnDone();
 
-    taskInProgress.map((task, index) => {
+    tasksDone.map((task, index) => {
       if (task.id === this.id) {
-        tasks.push(task);
-        taskInProgress.splice(index, 1);
+        tasksDone.splice(index, 1);
       }
     });
-    this.renderCardInProgress;
-    BASE_SERVISE.setTodosInProgress(taskInProgress);
-    BASE_SERVISE.setNewTodos(tasks);
+    BASE_SERVISE.setTodosInColumnDone(tasksDone);
+    this.renderCardInColumnDone();
   };
 }
 export { Card, initCard };
