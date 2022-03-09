@@ -5,6 +5,7 @@ import { toast } from "./components/Toast.js";
 import { counter } from "./components/Counter.js";
 import { request } from "./services/mockAPI.js";
 import { initCard } from "./components/Card.js";
+import { printUsersInModal } from "./services/placeholderAPI";
 
 document.addEventListener("DOMContentLoaded", initApp);
 
@@ -12,4 +13,5 @@ function initApp() {
   initCard();
   currentTime();
   modalToDo.init();
+  printUsersInModal();
 }

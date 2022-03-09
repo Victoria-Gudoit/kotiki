@@ -5,7 +5,7 @@ function getUUID() {
   return id;
 }
 function getValueOption() {
-  const select = document.querySelector("#user");
+  const select = document.querySelector("#users");
   const value = select.options[select.selectedIndex].text;
   return value;
 }
