@@ -1,7 +1,7 @@
 import { BASE_SERVISE } from "../services/localStorageAPI.js";
 
 const URL = "https://622514976c0e3966204d0bae.mockapi.io/trello";
-const tasks = BASE_SERVISE.getTodosData();
+const tasks = BASE_SERVISE.getNewTodos();
 
 const options = {
   method: "POST",
