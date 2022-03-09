@@ -1,20 +1,29 @@
-import { BASE_SERVISE } from "../services/localStorageAPI.js";
+import { getUsers } from "../services/placeholderAPI.js";
 
-const URL = "https://622514976c0e3966204d0bae.mockapi.io/trello";
-const tasks = BASE_SERVISE.getNewTodos();
+function postUsers(users) {
+  const URL = "https://622514976c0e3966204d0bae.mockapi.io/trello";
 
-const options = {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(tasks),
-};
+  const usersName = users.map((user) => {
+    return user.name;
+  });
 
-const request = new Request(URL, options);
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(usersName),
+  };
 
-fetch(request)
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+  const request = new Request(URL, options);
 
-export { request };
+  fetch(request)
+    .then((response) => response.json())
+    .then((data) => data);
+}
+
+function handleUsers() {
+  getUsers().then((users) => postUsers(users));
+}
+
+export { handleUsers };
