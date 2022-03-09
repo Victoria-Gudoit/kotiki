@@ -17,4 +17,4 @@ function printUsersInModal() {
   getUsers().then((users) => printUsers(users));
 }
 
-export { printUsersInModal };
+export { getUsers, printUsersInModal };
