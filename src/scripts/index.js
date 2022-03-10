@@ -3,7 +3,7 @@ import { currentTime } from "./components/Clock.js";
 import { modalToDo } from "./components/ModalToDo.js";
 import { toast } from "./components/Toast.js";
 import { counter } from "./components/Counter.js";
-import { handleUsers } from "./services/mockAPI.js";
+import { handleGetUsers } from "./services/mockAPI.js";
 import { initCard } from "./components/Card.js";
 import { printUsersInModal } from "./services/placeholderAPI";
 
@@ -14,5 +14,5 @@ function initApp() {
   currentTime();
   modalToDo.init();
   printUsersInModal();
-  handleUsers();
+  handleGetUsers();
 }

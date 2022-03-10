@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,49 +12,45 @@
     <script src="scripts/index.js" defer type="module"></script>
     <title>Trello</title>
 </head>
+
 <body>
     <header class="header">
         <h1 class="header__logo">Trello</h1>
-        <p class="header__time" id="clock"></p> 
+        <p class="header__time" id="clock"></p>
     </header>
     <div class="main">
         <div class="container">
-            <div class="column column-todo" id="column-todo">
+            <div class="column" id="column-todo">
                 <h2 class="column__title column__title--blue">todo: <span class="column__counter" id="counter-todo"></span></h2>
                 <div class="column__cards" id="column-cards"></div>
-                <button class="column__btn-add" type="button">Add todo</button>
+                <button class="column__btn column__btn--blue" id="btn-add" type="button">Add todo</button>
             </div>
-            
-            <div class="column column-progress" id="column-progress">
+            <div class="column" id="column-progress">
                 <h2 class="column__title column__title--pink">in progress: <span class="column__counter"></span></h2>
                 <div class="column__cards" id="column-cards-progress"></div>
-
             </div>
-            
-            <div class="column column-done" id="column-done">
+            <div class="column column--done" id="column-done">
                 <h2 class="column__title column__title--orange">done <span class="column__counter"></span></h2>
                 <div class="column__cards" id="column-cards-done"></div>
-
-            
-                <button class="column__btn-delete-all" id="delete-all" type="button">Delete all</button></div>
-                <div class="modal-warning" id="modal-warning">
-                    <div class="card card-modal">
-                        <div class="card__content "> 
-                            <p class="card__content-description"></p>
-                        </div>
-                        <div class="card__content card__content--center">
-                            <button class="card__content-btn" id="cancel-modal" type="button">Cancel</button>
-                            <button class="card__content-btn" id="confirm-delete-all" type="button">Confirm</button>
-                        </div>
+                <button class="column__btn column__btn--orange" id="delete-all" type="button">Delete all</button></div>
+            <div class="modal-warning" id="modal-warning">
+                <div class="card card-modal">
+                    <div class="card__content ">
+                        <p class="card__content-description card__content-description--size"></p>
+                    </div>
+                    <div class="card__content card__content--center">
+                        <button class="card__content-btn" id="cancel-modal" type="button">Cancel</button>
+                        <button class="card__content-btn" id="confirm-delete-all" type="button">Confirm</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal-window " id="modal-window">
+    </div>
+    <div class="modal-window" id="modal-window">
         <div class="modal-window__content">
-            <input class="modal-window__title" type="text" id="modal-title" placeholder="Title">
-            <textarea class="modal-window__description" id="modal-text" name="text" placeholder='Write your task...'></textarea>
+            <input class="modal-window__input" type="text" id="modal-title" placeholder="Title">
+            <textarea class="modal-window__area" id="modal-text" name="text" placeholder='Write your task...'></textarea>
             <div class="modal-window__buttons">
                 <select class="modal-window__select" id="users">
                     <option value="user1"selected="true" disabled="disabled">User</option>
@@ -63,10 +60,10 @@
             </div>
         </div>
     </div>
-
     <div id="toast" class="toast">
-        <div class="toast__modal-message">Привет, это приложение Trello:)</div>
+        <p class="toast__message">Привет, это приложение Trello:)</p>
         <button class="toast__button-close" type="button"></button>
     </div>
 </body>
+
 </html>
