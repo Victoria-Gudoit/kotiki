@@ -1,0 +1,36 @@
+.card__content-btn {
+    font-weight: 400;
+    font-size: 13px;
+    background: $white;
+    border: solid 0.1px;
+    border-radius: 8px;
+    &--hidden {
+        display: none;
+    }
+    &--arrow {
+        position: relative;
+        width: 20px;
+        height: 25px;
+    }
+    &--arrow::before {
+        content: ">";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.column__btn {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    border-radius: 15px;
+    &--blue {
+        background-color: $light-blue;
+    }
+    &--orange {
+        background-color: $light-orange;
+    }
+}

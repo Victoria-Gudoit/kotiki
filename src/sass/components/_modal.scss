@@ -1,104 +1,86 @@
 .modal-warning {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-
-  margin: 0 auto;
-  height: 100%;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  visibility: hidden;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.6);
-  transition: all 0.5s ease 0s;
-
-  &__open {
-    visibility: visible;
-    opacity: 1;
+    @include position-fixed;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.6);
     transition: all 0.5s ease 0s;
-  }
+    &--open {
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.5s ease 0s;
+    }
 }
 
 .card-modal {
-  font-family: $font-palanquin-dark;
-  text-align: center;
-  background-color: rgb(255, 211, 211);
-  max-width: 300px;
+    font-family: $font-palanquin-dark;
+    text-align: center;
+    background-color: rgb(255, 211, 211);
+    max-width: 300px;
 }
 
 .modal-window {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 30px 15px;
-  font-family: $font-palanquin-dark;
-  visibility: hidden;
-  opacity: 0;
-  transition: all 0.8s ease 0s;
-  background: rgba(0, 0, 0, 0.8);
-
-  &__title {
-    width: 100px;
-    margin-bottom: 10px;
-    &:focus {
-      outline: none;
-    }
-  }
-
-  &__description {
-    width: 100%;
-    height: 150px;
-    margin-bottom: 20px;
-    resize: none;
-    &:focus {
-      outline: none;
-    }
-  }
-
-  &__select {
-    outline: none;
-  }
-
-  &__select,
-  &__button-cancel,
-  &__button-confirm {
-    font-weight: 400;
-    font-size: 13px;
-    color: $light-grey;
-    background: $white;
-    border: solid 0.1px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-
-  .modal-window__content {
-    width: 100%;
-    max-width: 500px;
-    padding: 50px;
-    background-color: $light-blue;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px black;
-    transform: translate(0px, 0%);
+    @include position-fixed;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px 15px;
+    font-family: $font-palanquin-dark;
+    visibility: hidden;
+    opacity: 0;
     transition: all 0.8s ease 0s;
-  }
-}
-
-.modal__active {
-  visibility: visible;
-  opacity: 1;
-  transition: all 0.8s ease 0s;
-}
-.modal__hidden {
-  overflow: hidden;
+    background: rgba(0, 0, 0, 0.8);
+    &__input {
+        width: 100px;
+        margin-bottom: 10px;
+        &:focus {
+            outline: none;
+        }
+    }
+    &__area {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 20px;
+        resize: none;
+        &:focus {
+            outline: none;
+        }
+    }
+    &__select {
+        outline: none;
+        cursor: pointer;
+    }
+    &__select,
+    &__button-cancel,
+    &__button-confirm {
+        font-weight: 400;
+        font-size: 13px;
+        color: $light-grey;
+        background: $white;
+        border: solid 0.1px;
+        border-radius: 8px;
+    }
+    &--active {
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.8s ease 0s;
+    }
+    &--hidden {
+        overflow: hidden;
+    }
+    &__content {
+        width: 100%;
+        max-width: 500px;
+        padding: 50px;
+        background-color: $light-blue;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px black;
+        transform: translate(0px, 0%);
+        transition: all 0.8s ease 0s;
+    }
 }

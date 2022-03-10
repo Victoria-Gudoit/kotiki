@@ -22,8 +22,8 @@ function postUsers(users) {
     .then((data) => data);
 }
 
-function handleUsers() {
+function handleGetUsers() {
   getUsers().then((users) => postUsers(users));
 }
 
-export { handleUsers };
+export { handleGetUsers };

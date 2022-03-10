@@ -1,9 +1,10 @@
 @import "config/reset";
 @import "config/mixins";
 @import "config/variables";
+@import "config/global";
 @import "components/header";
 @import "components/container";
-@import "components/cards";
-@import "components/buttons";
+@import "components/card";
+@import "components/button";
 @import "components/modal";
 @import "components/toast";
