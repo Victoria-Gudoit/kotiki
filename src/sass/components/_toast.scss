@@ -1,50 +1,50 @@
 .toast {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    max-width: 400px;
-    padding: 6px;
-    background: $white;
-    font-family: $font-palanquin-dark;
-    text-align: center;
-    border: 1px solid $light-purplish-pink;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.2s, top 0.2s, visibility 0.2s;
-    &__button-close {
-        position: absolute;
-        top: 2px;
-        right: 5px;
-        background: none;
-        border: none;
-    }
-    &__button-close::before,
-    &__button-close::after {
-        position: absolute;
-        top: 2px;
-        right: 5px;
-        content: " ";
-        width: 2px;
-        height: 10px;
-        color: $light-grey;
-        background: $light-grey;
-        border: solid 0.1px;
-        border-radius: 8px;
-    }
-    &__button-close::before {
-        transform: rotate(45deg);
-    }
-    &__button-close::after {
-        transform: rotate(-45deg);
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 400px;
+  padding: 6px;
+  background: $white;
+  font-family: $font-roboto-dark;
+  text-align: center;
+  border: 1px solid $light-purplish-pink;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+  &__button-close {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    background: none;
+    border: none;
+  }
+  &__button-close::before,
+  &__button-close::after {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    content: " ";
+    width: 2px;
+    height: 10px;
+    color: $light-grey;
+    background: $light-grey;
+    border: solid 0.1px;
+    border-radius: 8px;
+  }
+  &__button-close::before {
+    transform: rotate(45deg);
+  }
+  &__button-close::after {
+    transform: rotate(-45deg);
+  }
 }
 
 .toast-visible {
-    top: 20px;
-    opacity: 1;
-    visibility: visible;
+  top: 20px;
+  opacity: 1;
+  visibility: visible;
 }
