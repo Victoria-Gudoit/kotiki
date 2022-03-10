@@ -29,15 +29,27 @@
   &-title,
   &-description,
   &-user {
+    width: 130px;
+    height: 35px;
     padding: 2px 5px;
     box-sizing: border-box;
     font-size: 16px;
     font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
     cursor: pointer;
+  }
+
+  &-description,
+  &-user {
+    width: 180px;
+    height: 35px;
+    text-overflow: ellipsis;
   }
 }
 .card__content-hidden {
   position: absolute;
+  left: 500px;
   opacity: 0;
 }
 
