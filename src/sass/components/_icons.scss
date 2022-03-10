@@ -1,0 +1,13 @@
+.trello {
+  width: 30px;
+  height: 25px;
+  fill: #a09abc;
+}
+.inpogress,
+.done,
+.todo {
+  width: 20px;
+  height: 15px;
+  margin-right: 5px;
+  fill: $light-grey;
+}

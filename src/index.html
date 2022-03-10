@@ -8,29 +8,40 @@
     <link rel="stylesheet" href="sass/index.scss">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro:wght@600&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="icons/trello.ico">
     <script src="scripts/index.js" defer type="module"></script>
     <title>Trello</title>
 </head>
 
 <body>
     <header class="header">
-        <h1 class="header__logo">Trello</h1>
+        <h1 class="header__logo">
+            <svg class="trello">
+            <use xlink:href="icons/icons.svg#trello"></use>
+        </svg>Trello</h1>
         <p class="header__time" id="clock"></p>
     </header>
     <div class="main">
         <div class="container">
             <div class="column" id="column-todo">
-                <h2 class="column__title column__title--blue">todo: <span class="column__counter" id="counter-todo"></span></h2>
+                <h2 class="column__title column__title--blue"><svg class="todo">
+                    <use xlink:href="icons/icons.svg#todo"></use>
+                </svg>todo: <span class="column__counter" id="counter-todo"></span></h2>
                 <div class="column__cards" id="column-cards"></div>
                 <button class="column__btn column__btn--blue" id="btn-add" type="button">Add todo</button>
             </div>
             <div class="column" id="column-progress">
-                <h2 class="column__title column__title--pink">in progress: <span class="column__counter"></span></h2>
+                <h2 class="column__title column__title--pink"><svg class="inpogress">
+                    <use xlink:href="icons/icons.svg#inprogress"></use>
+                </svg>in progress: <span class="column__counter"></span></h2>
                 <div class="column__cards" id="column-cards-progress"></div>
             </div>
             <div class="column column--done" id="column-done">
-                <h2 class="column__title column__title--orange">done <span class="column__counter"></span></h2>
+                <h2 class="column__title column__title--orange"><svg class="done">
+                    <use xlink:href="icons/icons.svg#done"></use>
+                </svg>done <span class="column__counter"></span></h2>
                 <div class="column__cards" id="column-cards-done"></div>
                 <button class="column__btn column__btn--orange" id="delete-all" type="button">Delete all</button></div>
             <div class="modal-warning" id="modal-warning">
