@@ -30,7 +30,7 @@
   &-description,
   &-user {
     width: 130px;
-    height: 25px;
+    height: 35px;
     padding: 2px 5px;
     box-sizing: border-box;
     font-size: 16px;
@@ -42,8 +42,8 @@
 
   &-description,
   &-user {
-    width: 200px;
-    height: 25px;
+    width: 180px;
+    height: 35px;
     text-overflow: ellipsis;
   }
 }
