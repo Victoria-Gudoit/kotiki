@@ -1,34 +1,37 @@
 .container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: $font-roboto-dark;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: $font-roboto-dark;
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin-bottom: 10px;
-    &__title {
-        text-align: center;
-        color: $light-grey;
-        &--blue {
-            background-color: $light-blue;
-        }
-        &--pink {
-            background-color: $light-purplish-pink;
-        }
-        &--orange {
-            background-color: $light-orange;
-        }
-        &--done {
-            position: relative;
-        }
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 10px;
+
+  &__title {
+    text-align: center;
+    color: $light-grey;
+
+    &--blue {
+      background-color: $light-blue;
     }
-    @include md {
-        flex: 0 3 30%;
+    &--pink {
+      background-color: $light-purplish-pink;
     }
+    &--orange {
+      background-color: $light-orange;
+    }
+    &--done {
+      position: relative;
+    }
+  }
+
+  @include md {
+    flex: 0 3 30%;
+  }
 }
