@@ -1,56 +1,63 @@
 .card {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 15px;
+
+  &__input {
+    width: 120px;
+    outline: none;
+  }
+
+  &--blue {
+    background-color: $light-blue;
+  }
+  &--pink {
+    background-color: $light-purplish-pink;
+  }
+  &--orange {
+    background-color: $light-orange;
+  }
+
+  &__content {
     display: flex;
-    flex-direction: column;
-    padding: 5px;
-    margin-top: 10px;
-    border-radius: 15px;
-    &__input {
-        width: 120px;
-        outline: none;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10px;
+
+    &--center {
+      justify-content: space-around;
     }
-    &--blue {
-        background-color: $light-blue;
+
+    &-title,
+    &-description,
+    &-user {
+      width: 130px;
+      height: 35px;
+      padding: 2px 5px;
+      box-sizing: border-box;
+      font-size: 16px;
+      font-weight: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &--hidden {
+        position: absolute;
+        left: 500px;
+        opacity: 0;
+      }
     }
-    &--pink {
-        background-color: $light-purplish-pink;
+    
+    &-description,
+    &-user {
+      width: 180px;
+      height: 35px;
+      text-overflow: ellipsis;
     }
-    &--orange {
-        background-color: $light-orange;
+    &-description--size {
+      width: 100%;
+      height: 100%;
     }
-    &__content {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 10px;
-        &--center {
-            justify-content: space-around;
-        }
-        &-title,
-        &-description,
-        &-user {
-            width: 130px;
-            height: 35px;
-            padding: 2px 5px;
-            box-sizing: border-box;
-            font-size: 16px;
-            font-weight: normal;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            &--hidden {
-                position: absolute;
-                left: 500px;
-                opacity: 0;
-            }
-        }
-        &-description,
-        &-user {
-            width: 180px;
-            height: 35px;
-            text-overflow: ellipsis;
-        }
-        &-description--size {
-            width: 100%;
-            height: 100%;
-        }
-    }
+  }
 }
