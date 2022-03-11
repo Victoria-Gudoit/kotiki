@@ -13,6 +13,8 @@
 
   &__logo {
     margin-left: 15px;
+    display: flex;
+    align-items: center;
     font-family: $font-roboto-dark;
     font-size: 30px;
     font-weight: 400;
