@@ -4,7 +4,7 @@
 
 <img src="https://user-images.githubusercontent.com/67506976/158037079-dcceccb5-4064-4382-8ed7-b780fc28cc68.gif"/></h1>
 
-## Features
+## ⭐️ Features
 
 - Add task
 - Remove task
