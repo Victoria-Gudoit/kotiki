@@ -20,7 +20,7 @@
 # Technologies:
 <code>+</code> HTML
 
-<code>+</code> CSS
+<code>+</code> SCSS
 
 <code>+</code> JS
 
