@@ -1,37 +1,19 @@
-import { BASE_SERVISE } from "../services/localStorageAPI.js";
+const column = new ColumnTodos();
 
-const columnTodo = new ColumnTodos();
-const columnProgress = new ColumnTodos();
-const columnDone = new ColumnTodos();
+const keys = {
+  counterTodo: document.querySelector("#counter-todo"),
+  counterProgress: document.querySelector("#counter-progress"),
+  counterDone: document.querySelector("#counter-done"),
+};
 
 function ColumnTodos() {
-  this.cardsInColumnTodo = function () {
-    const tasks = BASE_SERVISE.getNewTodos();
-    const counterItem = document.querySelector("#counter-todo");
+  this.cardsInColumn = function (tasks, counterId) {
     const amountOfCards = tasks.length;
-    counterItem.textContent = amountOfCards;
+    counterId.textContent = amountOfCards;
     if (!amountOfCards) {
-      counterItem.textContent = "";
-    }
-  };
-  this.cardsInColumnProgress = function () {
-    const tasks = BASE_SERVISE.getTodosInProgress();
-    const counterItem = document.querySelector("#counter-progress");
-    const amountOfCards = tasks.length;
-    counterItem.textContent = amountOfCards;
-    if (!amountOfCards) {
-      counterItem.textContent = "";
-    }
-  };
-  this.cardsInColumnDone = function () {
-    const tasks = BASE_SERVISE.getTodosInColumnDone();
-    const counterItem = document.querySelector("#counter-done");
-    const amountOfCards = tasks.length;
-    counterItem.textContent = amountOfCards;
-    if (!amountOfCards) {
-      counterItem.textContent = "";
+      counterId.textContent = "";
     }
   };
 }
 
-export { columnTodo, columnProgress, columnDone };
+export { column, keys };

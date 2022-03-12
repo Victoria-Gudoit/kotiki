@@ -1,6 +1,6 @@
 import { BASE_SERVISE } from "../services/localStorageAPI.js";
 import { Card } from "./Card.js";
-import { columnDone } from "../components/Counter.js";
+import { column, keys } from "../components/Counter.js";
 
 const options = {
   message: "Are you sure that you want to delete every completed task?",
@@ -59,7 +59,7 @@ function ModalWarning({ root, message }) {
     BASE_SERVISE.setTodosInColumnDone(tasksDone);
     const cardInColumnDone = new Card(tasksDone);
     cardInColumnDone.renderCardInColumnDone();
-    columnDone.cardsInColumnDone();
+    column.cardsInColumn(tasksDone, keys.counterDone);
   };
 }
 
