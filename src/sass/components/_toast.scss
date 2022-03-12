@@ -15,6 +15,11 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.2s, top 0.2s, visibility 0.2s;
+  &--visible {
+    top: 20px;
+    opacity: 1;
+    visibility: visible;
+  }
   &__button-close {
     position: absolute;
     top: 2px;
@@ -26,7 +31,7 @@
   &__button-close::after {
     position: absolute;
     top: 2px;
-    right: 5px;
+    right: 2px;
     content: " ";
     width: 2px;
     height: 10px;
@@ -41,10 +46,4 @@
   &__button-close::after {
     transform: rotate(-45deg);
   }
-}
-
-.toast-visible {
-  top: 20px;
-  opacity: 1;
-  visibility: visible;
 }

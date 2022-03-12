@@ -15,4 +15,5 @@ function initApp() {
   modalToDo.init();
   printUsersInModal();
   handleGetUsers();
+  toast.init()
 }
