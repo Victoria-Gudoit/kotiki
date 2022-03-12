@@ -7,11 +7,7 @@ import {
   createCardInProgress,
   createCardInColumnDone,
 } from "../templates/templates.js";
-import {
-  columnTodo,
-  columnProgress,
-  columnDone,
-} from "../components/Counter.js";
+import { column, keys } from "../components/Counter.js";
 import { modalWarning } from "../components/ModalWarning.js";
 
 function initCard() {
@@ -49,13 +45,13 @@ function Card(title, description) {
         const card = createCard(task);
         card.addEventListener("click", this.handleCardTodo);
         todosWrapper.appendChild(card);
-        columnTodo.cardsInColumnTodo();
+        column.cardsInColumn(tasks, keys.counterTodo);
       });
     }
   };
 
-  this.handleCardTodo = (event) => {
-    switch (event.target.dataset && event.target.textContent.toLowerCase()) {
+  this.handleCardTodo = ({ target }) => {
+    switch (target.dataset && event.target.textContent.toLowerCase()) {
       case "edit":
         this.edit();
         break;
@@ -63,14 +59,13 @@ function Card(title, description) {
         this.save();
         break;
     }
-    if (event.target.dataset.arrow) {
+    if (target.dataset.arrow) {
       this.moveCardInProgress();
-      columnTodo.cardsInColumnTodo();
       this.renderCardInProgress();
       this.stopMovingCards();
       this.showModalWarning();
     }
-    if (event.target.dataset.delete) {
+    if (target.dataset.delete) {
       this.delete();
     }
   };
@@ -138,7 +133,7 @@ function Card(title, description) {
     });
     BASE_SERVISE.setNewTodos(tasks);
     this.render();
-    columnTodo.cardsInColumnTodo();
+    column.cardsInColumn(tasks, keys.counterTodo);
   };
 
   this.renderCardInProgress = function () {
@@ -149,38 +144,36 @@ function Card(title, description) {
       const cardInProgress = createCardInProgress(task);
       cardInProgress.addEventListener("click", this.handleCardInProgress);
       columnInProgress.appendChild(cardInProgress);
-      columnProgress.cardsInColumnProgress();
+      column.cardsInColumn(tasksInProgress, keys.counterProgress);
     });
   };
 
-  this.handleCardInProgress = (event) => {
-    if (event.target.dataset.action) {
+  this.handleCardInProgress = ({ target }) => {
+    if (target.dataset.action) {
       this.moveCardBack();
-      columnProgress.cardsInColumnProgress();
       this.renderCardInProgress();
       this.render();
-    } else if (event.target.dataset.complete) {
+    } else if (target.dataset.complete) {
       this.moveCardInColumnDone();
       this.renderCardInColumnDone();
-      columnProgress.cardsInColumnProgress();
     }
   };
 
   this.moveCardInProgress = function () {
     this.card = event.target.closest(".card");
     this.id = this.card.id;
-    const newTasks = BASE_SERVISE.getNewTodos();
+    const tasks = BASE_SERVISE.getNewTodos();
     const tasksInProgress = BASE_SERVISE.getTodosInProgress();
 
-    newTasks.map((task, index) => {
+    tasks.map((task, index) => {
       if (task.id === this.id) {
         tasksInProgress.push(task);
-        newTasks.splice(index, 1);
+        tasks.splice(index, 1);
       }
     });
-    BASE_SERVISE.setNewTodos(newTasks);
+    BASE_SERVISE.setNewTodos(tasks);
     this.render();
-
+    column.cardsInColumn(tasks, keys.counterTodo);
     BASE_SERVISE.setTodosInProgress(tasksInProgress);
   };
 
@@ -188,17 +181,17 @@ function Card(title, description) {
     this.card = event.target.closest(".card");
     this.id = this.card.id;
     const tasks = BASE_SERVISE.getNewTodos();
-    const taskInProgress = BASE_SERVISE.getTodosInProgress();
+    const tasksInProgress = BASE_SERVISE.getTodosInProgress();
 
-    taskInProgress.map((task, index) => {
+    tasksInProgress.map((task, index) => {
       if (task.id === this.id) {
         tasks.push(task);
-        taskInProgress.splice(index, 1);
+        tasksInProgress.splice(index, 1);
       }
     });
     this.renderCardInProgress;
-
-    BASE_SERVISE.setTodosInProgress(taskInProgress);
+    column.cardsInColumn(tasksInProgress, keys.counterProgress);
+    BASE_SERVISE.setTodosInProgress(tasksInProgress);
     BASE_SERVISE.setNewTodos(tasks);
   };
 
@@ -240,24 +233,24 @@ function Card(title, description) {
     });
     BASE_SERVISE.setTodosInProgress(tasksInProgress);
     this.renderCardInProgress();
-
+    column.cardsInColumn(tasksInProgress, keys.counterProgress);
     BASE_SERVISE.setTodosInColumnDone(tasksInColumnDone);
   };
 
   this.renderCardInColumnDone = function () {
-    const tasksInColumnDone = BASE_SERVISE.getTodosInColumnDone();
+    const tasksDone = BASE_SERVISE.getTodosInColumnDone();
     const columnTodoDone = document.querySelector("#column-cards-done");
     columnTodoDone.innerHTML = "";
-    tasksInColumnDone.forEach((task) => {
+    tasksDone.forEach((task) => {
       const cardInColumnDone = createCardInColumnDone(task);
       cardInColumnDone.addEventListener("click", this.handleCardInColumnDone);
       columnTodoDone.appendChild(cardInColumnDone);
-      columnDone.cardsInColumnDone();
+      column.cardsInColumn(tasksDone, keys.counterDone);
     });
   };
 
-  this.handleCardInColumnDone = (event) => {
-    if (event.target.dataset.remove) {
+  this.handleCardInColumnDone = ({ target }) => {
+    if (target.dataset.remove) {
       this.removeCardDone();
     }
   };
@@ -274,7 +267,7 @@ function Card(title, description) {
     });
     BASE_SERVISE.setTodosInColumnDone(tasksDone);
     this.renderCardInColumnDone();
-    columnDone.cardsInColumnDone();
+    column.cardsInColumn(tasksDone, keys.counterDone);
   };
 }
 export { Card, initCard };
