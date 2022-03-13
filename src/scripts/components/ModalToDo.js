@@ -18,6 +18,7 @@ function ModalToDo(root) {
   };
 
   this.handleModalOpen = function () {
+    modalAddingUser.deleteOptions();
     modalAddingUser.printUsersInModal();
     modalToDo.open();
   };

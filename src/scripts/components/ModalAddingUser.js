@@ -45,10 +45,16 @@ function ModalAdding(root) {
   this.clearInput = function (text) {
     text.value = "";
   };
+
+  this.deleteOptions = function () {
+    const list = document.querySelector("#users");
+    list.innerHTML = "";
+  };
   this.printUsers = function (users) {
     const list = document.querySelector("#users");
     users.forEach((user) => {
       const item = document.createElement("option");
+      item.id = "option";
       item.textContent = user.name;
       list.append(item);
     });
