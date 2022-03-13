@@ -1,4 +1,5 @@
-.modal-warning {
+.modal-warning,
+.modal-adding {
   @include position-fixed;
   margin: 0 auto;
   height: 100%;
@@ -15,12 +16,20 @@
     transition: all 0.5s ease 0s;
   }
 }
+.modal-adding__input {
+  &:focus {
+    outline: none;
+  }
+}
 
 .card-modal {
   font-family: $font-roboto-dark;
   text-align: center;
   background-color: rgb(255, 211, 211);
   max-width: 300px;
+  &--backgrond-light-purple {
+    background: $light-purple;
+  }
 }
 
 .modal-window {

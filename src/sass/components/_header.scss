@@ -10,9 +10,15 @@
   @include sm {
     flex: 0 1 100%;
   }
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__logo {
     margin-left: 15px;
+    margin-right: 7px;
     display: flex;
     align-items: center;
     font-family: $font-roboto-dark;

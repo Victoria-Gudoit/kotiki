@@ -1,29 +1,27 @@
-import { getUsers } from "../services/placeholderAPI.js";
+const SERVICE_SERVER = {
+  url: "https://622da2d58d943bae34835a90.mockapi.io",
+  endPoints: {
+    users: "/users",
+  },
+  getUser() {
+    return this.url + this.endPoints.users;
+  },
+  postUser(inputValue) {
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name: `${inputValue}` }),
+    };
+    const request = new Request(this.getUser(), options);
+    fetch(request)
+      .then((response) => response.json())
+      .then((data) => data);
+  },
+  getUsers() {
+    return fetch(this.getUser()).then((response) => response.json());
+  },
+};
 
-function postUsers(users) {
-  const URL = "https://622514976c0e3966204d0bae.mockapi.io/trello";
-
-  const usersName = users.map((user) => {
-    return user.name;
-  });
-
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(usersName),
-  };
-
-  const request = new Request(URL, options);
-
-  fetch(request)
-    .then((response) => response.json())
-    .then((data) => data);
-}
-
-function handleGetUsers() {
-  getUsers().then((users) => postUsers(users));
-}
-
-export { handleGetUsers };
+export { SERVICE_SERVER };

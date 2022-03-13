@@ -17,10 +17,13 @@
 
 <body>
     <header class="header">
+        <div class="header__inner">
         <h1 class="header__logo">
             <svg class="trello">
             <use xlink:href="icons/icons.svg#trello"></use>
         </svg>Trello</h1>
+        <button class="header__btn card__content-btn" id="btn-add-user" type="button">Add User</button>
+    </div>
         <p class="header__time" id="clock"></p>
     </header>
     <div class="main">
@@ -74,6 +77,17 @@
     <div id="toast" class="toast">
         <p class="toast__message">Привет, это приложение Trello:)</p>
         <button class="toast__button-close" type="button"></button>
+    </div>
+    <div class="modal-adding " id="modal-adding">
+        <div class="card card-modal card-modal--backgrond-light-purple">
+            <div class="card__content ">
+                <input class="modal-adding__input" type="text" id="modal-adding-input" placeholder="Enter your name..">
+            </div>
+            <div class="card__content card__content--center">
+                <button class="card__content-btn" id="cancel-modal-adding" type="button">Cancel</button>
+                <button class="card__content-btn" id="confirm-modal-adding" type="button">Confirm</button>
+            </div>
+        </div>
     </div>
 </body>
 
