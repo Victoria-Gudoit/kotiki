@@ -13,7 +13,6 @@
 - List completed task
 - Set clock task time
 - Remove all tasks
-- Drag and Drop 
 - Local Storage
 - Both Mobile & Desktop Responsive
 
