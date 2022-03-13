@@ -1,5 +1,6 @@
 import { Card } from "./Card.js";
 import { BASE_SERVISE } from "../services/localStorageAPI.js";
+import { modalAddingUser } from "./ModalAddingUser.js";
 
 const modalToDo = new ModalToDo(document.querySelector(".modal-window"));
 
@@ -17,6 +18,7 @@ function ModalToDo(root) {
   };
 
   this.handleModalOpen = function () {
+    modalAddingUser.printUsersInModal();
     modalToDo.open();
   };
   this.handleModalClose = function () {
