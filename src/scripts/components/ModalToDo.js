@@ -27,8 +27,8 @@ function ModalToDo(root) {
   this.handleAddTask = function () {
     modalToDo.addTask();
   };
-  this.handleModalCloseOverlay = function (event) {
-    if (event.target.id === "modal-window") {
+  this.handleModalCloseOverlay = function ({ target }) {
+    if (target.id === "modal-window") {
       modalToDo.close();
     }
   };
@@ -41,6 +41,10 @@ function ModalToDo(root) {
     this.root.classList.remove("modal-window--active");
     document.querySelector("body").classList.remove("modal-window--hidden");
   };
+  this.clearInputs = function (titleInput, descriptionInput) {
+    titleInput.value = "";
+    descriptionInput.value = "";
+  };
   this.addTask = function () {
     const tasks = BASE_SERVISE.getNewTodos();
     const titleTask = document.querySelector("#modal-title");
@@ -51,8 +55,7 @@ function ModalToDo(root) {
     if (titleTask.value && descriptionTask.value) {
       BASE_SERVISE.setNewTodos(tasks);
       card.render();
-      titleTask.value = "";
-      descriptionTask.value = "";
+      this.clearInputs(titleTask, descriptionTask);
       modalToDo.close();
     } else {
       alert("Вы ничего не ввели! :( ");

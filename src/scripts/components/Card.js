@@ -51,7 +51,7 @@ function Card(title, description) {
   };
 
   this.handleCardTodo = ({ target }) => {
-    switch (target.dataset && event.target.textContent.toLowerCase()) {
+    switch (target.dataset && target.textContent.toLowerCase()) {
       case "edit":
         this.edit();
         break;
