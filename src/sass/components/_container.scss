@@ -4,7 +4,6 @@
   flex-wrap: wrap;
   max-width: 800px;
   margin: 0 auto;
-  font-family: $font-roboto-dark;
 }
 
 .column {
@@ -14,6 +13,9 @@
   margin-bottom: 10px;
 
   &__title {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
     text-align: center;
     color: $light-grey;
 

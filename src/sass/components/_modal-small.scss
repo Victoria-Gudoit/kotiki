@@ -1,0 +1,28 @@
+.modal {
+  @include position-fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all 0.5s ease 0s;
+
+  &--open {
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s ease 0s;
+  }
+}
+
+.card-modal {
+  max-width: 300px;
+  text-align: center;
+  background-color: rgb(255, 211, 211);
+
+  &--purple {
+    background: $light-purple;
+  }
+}

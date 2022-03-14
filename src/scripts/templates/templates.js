@@ -9,7 +9,7 @@ function createElement(tag, className, text = "") {
 }
 
 function createCard(task) {
-  const card = createElement("div", "card card--blue");
+  const card = createElement("li", "card card--blue");
   const cardHeader = createElement("div", "card__content");
   const cardTitle = createElement("h3", "card__content-title", task.title);
   const cardButtons = createElement("div", "card__content");
@@ -50,7 +50,7 @@ function createCard(task) {
 }
 
 function createCardInProgress(task) {
-  const card = createElement("div", "card card--pink");
+  const card = createElement("li", "card card--pink");
   const cardHeader = createElement("div", "card__content");
   const cardTitle = createElement("h3", "card__content-title", task.title);
   const cardButtons = createElement("div", "card__content");
@@ -88,7 +88,7 @@ function createCardInProgress(task) {
 }
 
 function createCardInColumnDone(task) {
-  const card = createElement("div", "card card--orange");
+  const card = createElement("li", "card card--orange");
   const cardHeader = createElement("div", "card__content");
   const cardTitle = createElement("h3", "card__content-title", task.title);
   const cardButtons = createElement("div", "card__content");

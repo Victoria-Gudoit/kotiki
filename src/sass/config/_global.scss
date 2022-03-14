@@ -1,11 +1,20 @@
-button {
+#root {
   font-family: $font-roboto-dark;
+}
+
+button {
+  font-family: inherit;
   color: $light-grey;
   cursor: pointer;
 }
 
-h2 {
-  font-size: 20px;
-  font-weight: 500;
-  text-transform: uppercase;
+input,
+button,
+textarea,
+select {
+  outline: none;
+}
+
+select {
+  cursor: pointer;
 }

@@ -10,18 +10,17 @@
   @include sm {
     flex: 0 1 100%;
   }
-  &__inner {
+  &__container {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   &__logo {
-    margin-left: 15px;
-    margin-right: 7px;
     display: flex;
     align-items: center;
-    font-family: $font-roboto-dark;
+    margin-left: 15px;
+    margin-right: 7px;
     font-size: 30px;
     font-weight: 400;
     color: $white;
@@ -29,8 +28,16 @@
 
   &__time {
     margin-right: 15px;
-    font-family: $font-roboto-dark;
     font-size: 25px;
     color: $white;
+  }
+
+  &__btn {
+    margin-left: 3px;
+    font-weight: 400;
+    font-size: 13px;
+    background: #ffffff;
+    border: solid 0.1px;
+    border-radius: 8px;
   }
 }
