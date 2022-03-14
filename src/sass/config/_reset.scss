@@ -58,17 +58,6 @@ select {
   font: inherit;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-
-h2 {
-  font-size: inherit;
-  font-weight: inherit;
-  text-transform: inherit;
-}
-
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;

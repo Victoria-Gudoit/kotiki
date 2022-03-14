@@ -37,10 +37,10 @@ function ModalAdding(root) {
   };
 
   this.open = function () {
-    this.root.classList.add("modal-adding--open");
+    this.root.classList.add("modal--open");
   };
   this.close = function () {
-    this.root.classList.remove("modal-adding--open");
+    this.root.classList.remove("modal--open");
   };
   this.clearInput = function (text) {
     text.value = "";

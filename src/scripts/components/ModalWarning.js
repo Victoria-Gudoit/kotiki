@@ -41,12 +41,12 @@ function ModalWarning({ root, message }) {
   };
 
   this.open = function () {
-    this.root.classList.add("modal-warning--open");
+    this.root.classList.add("modal--open");
     this.btnConfirmModal.classList.remove("card__content-btn--hidden");
   };
 
   this.close = function () {
-    this.root.classList.remove("modal-warning--open");
+    this.root.classList.remove("modal--open");
   };
 
   this.render = function () {
