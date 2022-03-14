@@ -23,6 +23,8 @@
 
 <code>+</code> JS
 
+<code>+</code> PARCEL
+
 ## Installation
 
 **Step 1:**
@@ -42,6 +44,13 @@ Execute the following command in console to get the required dependencies:
 npm install
 ```
 **Step 4:**
+
+Run the app
+
+``` 
+npm run dev
+```
+**Step 5:**
 
 Build the app
 
