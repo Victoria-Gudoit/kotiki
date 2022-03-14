@@ -1,22 +1,20 @@
-function renderTime() {
+function getCurrentTime() {
   const date = new Date();
   const hours = date.getHours().toString().padStart(2, "0");
   const minutes = date.getMinutes().toString().padStart(2, "0");
-
-  document.querySelector("#clock").textContent = `${hours}:${minutes}`;
+  return `${hours}:${minutes}`
 }
 
-function currentTime() {
-  window.setInterval(() => {
+function renderTime() {
+  const currentTime = getCurrentTime();
+  document.querySelector("#clock").textContent = currentTime;
+  return currentTime;
+}
+
+function startTime() {
+  setInterval(() => {
     renderTime();
-  }, 1);
+  }, 1000);
 }
 
-function clockInCard() {
-  const date = new Date();
-  let hours = date.getHours().toString().padStart(2, "0");
-  let minutes = date.getMinutes().toString().padStart(2, "0");
-  return `${hours}:${minutes}`;
-}
-
-export { currentTime, clockInCard };
+export { startTime, renderTime };
