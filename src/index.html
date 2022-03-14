@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Source+Sans+Pro:wght@600&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="icons/trello.ico">
+    <link rel="icon" href="assets/icons/trello.ico">
     <script src="scripts/index.js" defer type="module"></script>
     <title>Trello</title>
 </head>
@@ -21,7 +21,7 @@
         <div class="header__container">
             <h1 class="header__logo">
                 <svg class="trello">
-                    <use xlink:href="icons/icons.svg#trello"></use>
+                    <use xlink:href="assets/icons/icons.svg#trello"></use>
                 </svg>Trello
             </h1>
             <button class="header__btn" id="btn-add-user" type="button">Add User</button>
@@ -32,26 +32,26 @@
         <div class="container">
             <div class="column" id="column-todo">
                 <h2 class="column__title column__title--blue"><svg class="todo">
-                    <use xlink:href="icons/icons.svg#todo"></use>
+                    <use xlink:href="assets/icons/icons.svg#todo"></use>
                 </svg>todo: <span class="column__counter" id="counter-todo"></span></h2>
                 <ul class="column__cards" id="column-cards"></ul>
                 <button class="column__btn column__btn--blue" id="btn-add" type="button">Add todo</button>
             </div>
             <div class="column" id="column-progress">
                 <h2 class="column__title column__title--pink"><svg class="inpogress">
-                    <use xlink:href="icons/icons.svg#inprogress"></use>
+                    <use xlink:href="assets/icons/icons.svg#inprogress"></use>
                 </svg>in progress: <span class="column__counter" id="counter-progress"></span></h2>
                 <ul class="column__cards" id="column-cards-progress"></ul>
             </div>
             <div class="column column--done" id="column-done">
                 <h2 class="column__title column__title--orange"><svg class="done">
-                    <use xlink:href="icons/icons.svg#done"></use>
+                    <use xlink:href="assets/icons/icons.svg#done"></use>
                 </svg>done: <span class="column__counter" id="counter-done"></span></h2>
                 <ul class="column__cards" id="column-cards-done"></ul>
                 <button class="column__btn column__btn--orange" id="delete-all" type="button">Delete all</button></div>
             <div class="modal" id="modal-warning">
                 <div class="card card-modal">
-                    <div class="card__content">
+                    <div class="card__content">s
                         <p class="card__content-description card__content-description--lg"></p>
                     </div>
                     <div class="card__content card__content--center">
