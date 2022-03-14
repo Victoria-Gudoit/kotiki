@@ -5,15 +5,15 @@ const options = {
   CLOSE_DELAY: 20000,
 };
 
-class Toast{
-  constructor({root, message, OPEN_DELAY, CLOSE_DELAY}){
+class Toast {
+  constructor({root, message, OPEN_DELAY, CLOSE_DELAY}) {
     this.root = root;
     this.message = message;
     this.OPEN_DELAY = OPEN_DELAY;
     this.CLOSE_DELAY = CLOSE_DELAY;
   };
   
-  init(){
+  init() {
     this.root.addEventListener("click", this.handleToast);
     this.render();
     this.open();
