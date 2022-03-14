@@ -1,4 +1,4 @@
-import { SERVICE_SERVER } from "../services/mockAPI.js";
+import { MOCK_API } from "../services/mockAPI.js";
 
 const modalAddingUser = new ModalAdding(
   document.querySelector("#modal-adding")
@@ -30,7 +30,7 @@ function ModalAdding(root) {
   this.handleBtnConfirm = ({ target }) => {
     if (target.id === "confirm-modal-adding") {
       const modalInput = this.root.querySelector("#modal-adding-input").value;
-      SERVICE_SERVER.postUser(modalInput);
+      MOCK_API.postUser(modalInput);
       this.close();
       this.clearInput(this.modalInput);
     }
@@ -60,7 +60,7 @@ function ModalAdding(root) {
     });
   };
   this.printUsersInModal = function () {
-    SERVICE_SERVER.getUsers().then((users) => this.printUsers(users));
+    MOCK_API.getUsers().then((users) => this.printUsers(users));
   };
 }
 
