@@ -2,7 +2,7 @@
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h3 align="center">It's an elegant minimalist planner app with some features for schedule your tasks with to do lists.</h3>
 
-<img src="https://user-images.githubusercontent.com/67506976/158037079-dcceccb5-4064-4382-8ed7-b780fc28cc68.gif"/></h1>
+<img src="https://user-images.githubusercontent.com/67506976/158085511-5f57256d-f87c-488f-a22b-02bc75980b20.gif"/></h1>
 
 ## ⭐️ Features
 
