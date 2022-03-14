@@ -1,11 +1,6 @@
-const SERVICE_SERVER = {
-  url: "https://622da2d58d943bae34835a90.mockapi.io",
-  endPoints: {
-    users: "/users",
-  },
-  getUser() {
-    return this.url + this.endPoints.users;
-  },
+const MOCK_API = {
+  url: "https://622da2d58d943bae34835a90.mockapi.io/users",
+
   postUser(inputValue) {
     const options = {
       method: "POST",
@@ -14,14 +9,34 @@ const SERVICE_SERVER = {
       },
       body: JSON.stringify({ name: `${inputValue}` }),
     };
-    const request = new Request(this.getUser(), options);
+    const request = new Request(this.url, options);
+
     fetch(request)
-      .then((response) => response.json())
+      .then(
+        (response) =>
+          new Promise((resolve, reject) => {
+            if (response.ok) {
+              const users = response.json();
+              resolve(users);
+            } else {
+              reject(new Error("Ошибка!"));
+            }
+          })
+      )
       .then((data) => data);
   },
   getUsers() {
-    return fetch(this.getUser()).then((response) => response.json());
+    return new Promise((resolve, reject) => {
+      return fetch(this.url).then((response) => {
+        if (response.ok) {
+          const users = response.json();
+          resolve(users);
+        } else {
+          reject(new Error("Ошибка!"));
+        }
+      });
+    });
   },
 };
 
-export { SERVICE_SERVER };
+export { MOCK_API };
