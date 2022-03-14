@@ -1,5 +1,5 @@
 import { BASE_SERVISE } from "../services/localStorageAPI.js";
-import { clockInCard } from "./Clock.js";
+import { renderTime } from "./Clock.js";
 import { getUUID, getValueOption } from "../utils/utils.js";
 import {
   createCard,
@@ -34,7 +34,7 @@ function Card(title, description) {
   this.title = title;
   this.description = description;
   this.user = getValueOption();
-  this.time = clockInCard();
+  this.time = renderTime();
 
   this.render = function () {
     const tasks = BASE_SERVISE.getNewTodos();
