@@ -1,45 +1,49 @@
 const options = {
   root: document.querySelector("#toast"),
   message: 'Привет, это приложение Trello:)',
+  OPEN_DELAY : 15000,
+  CLOSE_DELAY: 20000,
 };
 
-function Toast({root, message}){
-  this.root = root;
-  this.message = message;
-  this.OPEN_DELAY = 15000;
-  this.CLOSE_DELAY = 20000;
+class Toast{
+  constructor({root, message, OPEN_DELAY, CLOSE_DELAY}){
+    this.root = root;
+    this.message = message;
+    this.OPEN_DELAY = OPEN_DELAY;
+    this.CLOSE_DELAY = CLOSE_DELAY;
+  };
   
-  this.init = function(){
+  init(){
     this.root.addEventListener("click", this.handleToast);
-    this.render()
+    this.render();
     this.open();
     this.closeTimeout();
   };
 
-  this.handleToast = (event) => {
+  handleToast = (event) => {
     if (event.target.closest('#toast')) {
       this.close();
     };
   };
   
-  this.open = function() {
+  open() {
     setTimeout(() => {
       this.root.classList.add("toast--visible");
     }, this.OPEN_DELAY);
   };
   
-  this.close = function() {
+  close() {
     this.root.classList.remove("toast--visible");
   };
 
-  this.closeTimeout = function() {
+  closeTimeout() {
     setTimeout(() => {
       this.root.classList.remove("toast--visible");
     }, this.CLOSE_DELAY);
   };
 
-  this.render = function() {
-    root.querySelector(".toast__message").textContent = this.message;
+  render() {
+    this.root.querySelector(".toast__message").textContent = this.message;
   };
 };
 
