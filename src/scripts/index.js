@@ -3,7 +3,7 @@ import { startTime } from "./components/Clock.js";
 import { modalToDo } from "./components/ModalToDo.js";
 import { toast } from "./components/Toast.js";
 import { initCard } from "./components/Card.js";
-import { modalAddingUser } from "./components/ModalAddingUser.js";
+import { ModalAddUser } from "./components/ModalAddUser.js";
 
 document.addEventListener("DOMContentLoaded", initApp);
 
@@ -13,5 +13,5 @@ function initApp() {
   modalToDo.init();
   modalWarning.init();
   toast.init();
-  modalAddingUser.init();
+  ModalAddUser.init();
 }

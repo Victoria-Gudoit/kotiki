@@ -1,10 +1,8 @@
 import { MOCK_API } from "../services/mockAPI.js";
 
-const modalAddingUser = new ModalAdding(
-  document.querySelector("#modal-adding")
-);
+const ModalAddUser = new ModalAdd(document.querySelector("#modal-adding"));
 
-function ModalAdding(root) {
+function ModalAdd(root) {
   this.root = root;
   this.btnCancelModal = this.root.querySelector("#cancel-modal-adding");
   this.btnConfirmModal = this.root.querySelector("#confirm-modal-adding");
@@ -64,4 +62,4 @@ function ModalAdding(root) {
   };
 }
 
-export { modalAddingUser };
+export { ModalAddUser };
